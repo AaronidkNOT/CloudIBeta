@@ -1,0 +1,600 @@
+/* Definición de variables CSS globales (Custom Properties) */
+:root {
+    /* Variables para el tema oscuro */
+    --fondo-primario-oscuro: #0f172a;         /* Color de fondo principal */
+    --fondo-secundario-oscuro: #1e293b;      /* Color de fondo secundario (ej. para secciones) */
+    --fondo-acento-oscuro: #334155;          /* Color de fondo para acentos o elementos destacados */
+    --fondo-papel-oscuro: #1e293b;           /* Color de fondo para "tarjetas" o contenedores de contenido */
+    --texto-primario-oscuro: #e2e8f0;        /* Color de texto principal */
+    --texto-secundario-oscuro: #94a3b8;      /* Color de texto secundario (ej. subtítulos, descripciones) */
+    --texto-enlace-oscuro: #38bdf8;          /* Color de texto para enlaces */
+    --borde-oscuro: #334155;                 /* Color para bordes */
+
+    /* Variables para el tema claro */
+    --fondo-primario-claro: #f1f5f9;
+    --fondo-secundario-claro: #ffffff;
+    --fondo-acento-claro: #e2e8f0;
+    --fondo-papel-claro: #ffffff;
+    --texto-primario-claro: #1e293b;
+    --texto-secundario-claro: #475569;
+    --texto-enlace-claro: #0ea5e9;
+    --borde-claro: #cbd5e1;
+
+    /* Paleta de colores (estos son nombres comunes de paletas como Tailwind) */
+    --cielo-500: #0ea5e9; /* Un tono de azul cielo */
+    --cielo-600: #0284c7; /* Un tono de azul cielo más oscuro */
+    --rosa-500: #ec4899; /* Un tono de rosa */
+    --verde-400: #4ade80; /* Un tono de verde */
+    --verde-300: #86efac; /* Un tono de verde más claro */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
+    background-color: var(--fondo-primario-oscuro); /* Color de fondo por defecto (tema oscuro) */
+    color: var(--texto-primario-oscuro); /* Color de texto por defecto (tema oscuro) */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para cambios de tema */
+    -webkit-font-smoothing: antialiased; /* Mejora el renderizado de fuentes en WebKit/Blink */
+    -moz-osx-font-smoothing: grayscale; /* Mejora el renderizado de fuentes en Firefox */
+}
+
+/* Estilos para el cuerpo cuando el tema claro está activo */
+html.tema-claro body { /* Asumiendo que añades la clase 'tema-claro' al <html> */
+    background-color: var(--fondo-primario-claro);
+    color: var(--texto-primario-claro);
+}
+
+/* Estilos para elementos animados */
+.elemento-animado {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(20px); /* Inicialmente desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición para la animación */
+}
+.elemento-animado.es-visible { /* Clase que se añade (ej. con JS) cuando el elemento es visible */
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+/* Clases para retrasar la animación */
+.retraso-100ms { transition-delay: 0.1s !important; }
+.retraso-200ms { transition-delay: 0.2s !important; }
+.retraso-300ms { transition-delay: 0.3s !important; }
+.retraso-400ms { transition-delay: 0.4s !important; }
+
+/* Estilo para la barra de navegación fija */
+.barra-navegacion-fija {
+    position: sticky; /* Fija la barra en la parte superior al hacer scroll */
+    top: 0;
+    z-index: 50; /* Asegura que esté por encima de otros elementos */
+    background-color: rgba(15, 23, 42, 0.8); /* Fondo semitransparente (tema oscuro) */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo (navegadores compatibles) */
+    -webkit-backdrop-filter: blur(10px); /* Para Safari */
+    border-bottom: 1px solid var(--borde-oscuro); /* Borde inferior */
+    /* Transiciones para varios cambios de propiedades (ej. cambio de tema) */
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+                color 0.3s ease, fill 0.3s ease, stroke 0.3s ease,
+                opacity 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease,
+                filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+}
+html.tema-claro .barra-navegacion-fija {
+    background-color: rgba(241, 245, 249, 0.8); /* Fondo semitransparente (tema claro) */
+    border-bottom: 1px solid var(--borde-claro);
+}
+
+/* Estilo para el logo con tema */
+.logo-con-tema {
+    font-size: 1.5rem; /* Tamaño de fuente */
+    line-height: 2rem; /* Altura de línea */
+    font-weight: 700; /* Grosor de fuente (negrita) */
+    color: var(--texto-enlace-oscuro); /* Color del logo (tema oscuro) */
+}
+html.tema-claro .logo-con-tema { color: var(--texto-enlace-claro); }
+
+/* Estilo para enlaces de navegación con tema */
+.enlace-navegacion-con-tema {
+    color: var(--texto-primario-oscuro);
+    transition: color 0.15s ease-in-out; /* Transición suave al pasar el cursor */
+}
+.enlace-navegacion-con-tema:hover { color: var(--texto-enlace-oscuro); } /* Color al pasar el cursor */
+html.tema-claro .enlace-navegacion-con-tema { color: var(--texto-primario-claro); }
+html.tema-claro .enlace-navegacion-con-tema:hover { color: var(--texto-enlace-claro) !important; } /* !important para asegurar precedencia */
+
+/* Estilo para el botón que despliega el menú móvil */
+.activador-menu-movil {
+    outline: 2px solid transparent; /* Quita el contorno por defecto */
+    outline-offset: 2px;
+}
+.activador-menu-movil:focus { outline: none; } /* Quita el contorno al enfocar */
+
+/* Estilo para enlaces de navegación en el menú móvil */
+.enlace-navegacion-movil {
+    display: block; /* Ocupa todo el ancho disponible */
+    padding: 0.5rem 1rem; /* Relleno interno */
+    border-radius: 0.25rem; /* Bordes redondeados */
+}
+/* Estilo hover para enlaces móviles con tema */
+.enlace-navegacion-movil-con-tema:hover { background-color: var(--fondo-acento-oscuro); }
+html.tema-claro .enlace-navegacion-movil-con-tema:hover { background-color: var(--fondo-acento-claro) !important; }
+
+/* Estilos base para botones */
+.boton {
+    font-weight: 600; /* Grosor de fuente semi-negrita */
+    border-radius: 0.5rem; /* Bordes redondeados más pronunciados */
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    text-align: center; /* Texto centrado */
+}
+/* Estilo para botones primarios */
+.boton-primario {
+    background-color: var(--cielo-500); /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 0.5rem 1rem; /* Relleno */
+}
+.boton-primario:hover { background-color: var(--cielo-600); } /* Fondo más oscuro al pasar el cursor */
+
+/* Estilo para botones que ocupan todo el ancho en móviles */
+.boton-bloque-movil {
+    display: block; /* Ocupa todo el ancho */
+    padding: 0.5rem 1rem;
+}
+
+/* Estilo para el fondo de la sección principal ("hero") */
+.fondo-seccion-principal {
+    /* Gradiente superpuesto a una imagen de fondo aleatoria de Unsplash */
+    background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 1)), url('https://source.unsplash.com/random/1600x900/?abstract,network,cloud');
+    background-size: cover; /* Asegura que la imagen cubra todo el área */
+    background-position: center; /* Centra la imagen de fondo */
+}
+
+/* Estilo para el título principal de la sección "hero" */
+.titulo-principal {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: white; /* Texto blanco (sobre el fondo oscuro de la imagen) */
+    margin-bottom: 1.5rem; /* Margen inferior */
+}
+@media (min-width: 768px) { /* Estilos para pantallas medianas y grandes */
+    .titulo-principal {
+        font-size: 3.75rem; /* Título más grande */
+        line-height: 1;
+    }
+}
+.acento-titulo-principal { color: var(--texto-enlace-oscuro); } /* Color para la parte acentuada del título */
+html.tema-claro .titulo-principal { color: var(--texto-primario-claro); } /* El título principal en tema claro no será blanco puro */
+html.tema-claro .acento-titulo-principal { color: var(--texto-enlace-claro); }
+
+
+/* Estilo para el subtítulo de la sección "hero" */
+.subtitulo-principal {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--texto-secundario-oscuro); /* Color más suave para el subtítulo */
+    margin-bottom: 2.5rem;
+    max-width: 42rem; /* Ancho máximo para mejor legibilidad */
+    margin-left: auto; /* Centrado horizontal */
+    margin-right: auto; /* Centrado horizontal */
+}
+@media (min-width: 768px) {
+    .subtitulo-principal {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+}
+html.tema-claro .subtitulo-principal { color: var(--texto-secundario-claro); }
+
+/* Estilo para el botón de llamada a la acción (CTA) en la sección "hero" */
+.boton-llamada-accion-principal {
+    background-color: var(--cielo-500);
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 2rem; /* Relleno más grande */
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    display: inline-block; /* Para que el padding funcione correctamente */
+    transition-property: all; /* Animar todas las propiedades posibles */
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Curva de animación suave */
+}
+.boton-llamada-accion-principal:hover {
+    background-color: var(--cielo-600);
+    transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+}
+
+/* Estilo para el relleno (padding) de las secciones */
+.seccion-con-relleno {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    .seccion-con-relleno {
+        padding-top: 6rem; /* Más relleno en pantallas grandes */
+        padding-bottom: 6rem;
+    }
+}
+
+/* Estilo para los títulos de sección */
+.titulo-seccion {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--texto-enlace-oscuro); /* Títulos de sección con color de enlace */
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .titulo-seccion {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+}
+html.tema-claro .titulo-seccion { color: var(--texto-enlace-claro); }
+
+/* Estilo para los subtítulos de sección */
+.subtitulo-seccion {
+    text-align: center;
+    color: var(--texto-secundario-oscuro);
+    margin-bottom: 3rem;
+    max-width: 36rem; /* Ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+}
+html.tema-claro .subtitulo-seccion { color: var(--texto-secundario-claro); }
+
+/* Estilo para las tarjetas de características */
+.tarjeta-caracteristica {
+    background-color: var(--fondo-papel-oscuro); /* Fondo tipo "papel" */
+    padding: 2rem;
+    border-radius: 0.75rem; /* Bordes redondeados */
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+/* Estilos específicos para tarjetas de características en tema claro dentro de la sección #caracteristicas */
+html.tema-claro #caracteristicas .tarjeta-caracteristica { /* Asumiendo que #caracteristicas es el ID de la sección */
+    background-color: var(--fondo-papel-claro) !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07); /* Sombra más clara */
+}
+
+/* Contenedor para el icono de la característica */
+.contenedor-icono-caracteristica {
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--cielo-500); /* Fondo del círculo del icono */
+    color: white;
+    border-radius: 9999px; /* Círculo perfecto */
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icono-caracteristica {
+    width: 2rem;
+    height: 2rem;
+}
+/* Título dentro de la tarjeta de característica */
+.titulo-tarjeta-caracteristica {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: var(--texto-primario-oscuro);
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+html.tema-claro .titulo-tarjeta-caracteristica { color: var(--texto-primario-claro) !important; }
+
+/* Texto descriptivo dentro de la tarjeta de característica */
+.texto-tarjeta-caracteristica {
+    color: var(--texto-secundario-oscuro);
+    text-align: center;
+}
+html.tema-claro .texto-tarjeta-caracteristica { color: var(--texto-secundario-claro) !important; }
+
+/* Estilo para resaltar fragmentos de código */
+.codigo-resaltado {
+    background-color: var(--fondo-acento-oscuro);
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+    color: var(--texto-enlace-oscuro);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* Fuente monoespaciada */
+}
+html.tema-claro .codigo-resaltado {
+    background-color: var(--fondo-acento-claro) !important;
+    color: var(--texto-enlace-claro) !important;
+}
+
+/* Estilo base para tarjetas de precios */
+.tarjeta-precios {
+    background-color: var(--fondo-papel-oscuro);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    border: 1px solid var(--borde-oscuro);
+    display: flex; /* Para alinear elementos internos, ej. el botón al final */
+    flex-direction: column; /* Elementos en columna */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease, border-color 0.3s ease;
+}
+.tarjeta-precios:hover {
+    transform: translateY(-5px) scale(1.02); /* Efecto de elevación y ligero zoom */
+    /* Sombra más pronunciada y borde de color de enlace */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 2px var(--texto-enlace-oscuro);
+}
+html.tema-claro .tarjeta-precios {
+    background-color: var(--fondo-papel-claro);
+    border: 1px solid var(--borde-claro);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07);
+}
+html.tema-claro .tarjeta-precios:hover {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -4px rgba(0,0,0,0.07), 0 0 0 2px var(--texto-enlace-claro);
+}
+
+/* Estilo para la tarjeta de precios marcada como "popular" */
+.tarjeta-precios-popular {
+    background-color: var(--cielo-500); /* Fondo distintivo */
+    border-color: var(--cielo-500);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); /* Sombra más grande */
+    position: relative; /* Para posicionar el badge */
+}
+html.tema-claro .tarjeta-precios-popular {
+    background-color: var(--texto-enlace-claro) !important;
+    border-color: var(--texto-enlace-claro) !important;
+}
+
+/* Distintivo (badge) para la tarjeta popular */
+.distintivo-popular-tarjeta-precios {
+    position: absolute; /* Posicionamiento absoluto respecto a la tarjeta */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); /* Centrado y ligeramente por encima */
+    background-color: var(--rosa-500); /* Color rosa para el badge */
+    color: white;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px; /* Píldora */
+}
+
+/* Nombre del plan en la tarjeta de precios */
+.nombre-tarjeta-precios {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: var(--texto-primario-oscuro);
+    margin-bottom: 0.5rem;
+}
+/* Estilos específicos para el nombre en la tarjeta popular (texto blanco) */
+.tarjeta-precios-popular .nombre-tarjeta-precios { color: white !important; }
+html.tema-claro .nombre-tarjeta-precios { color: var(--texto-primario-claro) !important; }
+html.tema-claro .tarjeta-precios-popular .nombre-tarjeta-precios { color: white !important; }
+
+
+/* Precio en la tarjeta de precios */
+.precio-tarjeta-precios {
+    color: var(--texto-enlace-oscuro);
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.precio-tarjeta-precios-popular { color: white !important; }
+html.tema-claro .precio-tarjeta-precios { color: var(--texto-enlace-claro) !important; }
+html.tema-claro .precio-tarjeta-precios-popular { color: white !important; }
+
+
+/* Unidad del precio (ej. "/mes") */
+.unidad-precio-tarjeta-precios {
+    font-size: 1.125rem;
+    color: var(--texto-secundario-oscuro);
+    font-weight: 400; /* Más ligero */
+}
+/* Color más claro para la unidad en la tarjeta popular */
+.unidad-precio-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; } /* --cielo-100 es un fallback si no está definido */
+html.tema-claro .unidad-precio-tarjeta-precios { color: var(--texto-secundario-claro) !important; }
+html.tema-claro .unidad-precio-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; }
+
+
+/* Descripción del plan en la tarjeta de precios */
+.descripcion-tarjeta-precios {
+    color: var(--texto-secundario-oscuro);
+    margin-bottom: 1.5rem;
+    min-height: 40px; /* Altura mínima para alinear tarjetas */
+}
+.descripcion-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; }
+html.tema-claro .descripcion-tarjeta-precios { color: var(--texto-secundario-claro) !important; }
+html.tema-claro .descripcion-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; }
+
+
+/* Lista de características en la tarjeta de precios */
+.caracteristicas-tarjeta-precios {
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Hace que esta sección ocupe el espacio disponible, empujando el botón hacia abajo */
+    color: var(--texto-primario-oscuro);
+}
+.caracteristicas-tarjeta-precios > * + * { margin-top: 0.75rem; } /* Espacio entre elementos de la lista */
+.caracteristicas-tarjeta-precios-popular { color: white !important; }
+html.tema-claro .caracteristicas-tarjeta-precios { color: var(--texto-secundario-claro) !important; } /* Usar secundario para lista en tema claro */
+html.tema-claro .caracteristicas-tarjeta-precios-popular { color: white !important; }
+
+
+/* Elemento individual de la lista de características */
+.elemento-caracteristica-tarjeta-precios {
+    display: flex;
+    align-items: center;
+}
+/* Icono de check (no usado en el HTML, pero se añade un ::before más abajo) */
+.icono-caracteristica-tarjeta-precios {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--verde-400); /* Color verde para el icono de check */
+    margin-right: 0.5rem;
+}
+.icono-caracteristica-tarjeta-precios-popular { color: var(--verde-300) !important; } /* Verde más claro en tarjeta popular */
+
+/* Botón de llamada a la acción (CTA) con tema dentro de las tarjetas de precios */
+.boton-llamada-accion-con-tema {
+    margin-top: auto; /* Empuja el botón al final de la tarjeta (si es flex-column) */
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: var(--fondo-acento-oscuro); /* Fondo sutil */
+    color: var(--texto-primario-oscuro);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+.boton-llamada-accion-con-tema:hover { background-color: var(--cielo-500); color: white; } /* Hover más llamativo */
+html.tema-claro .boton-llamada-accion-con-tema {
+    background-color: var(--fondo-acento-claro) !important;
+    color: var(--texto-primario-claro) !important;
+}
+html.tema-claro .boton-llamada-accion-con-tema:hover {
+    background-color: var(--texto-enlace-claro) !important;
+    color: white !important;
+}
+
+/* Botón CTA para la tarjeta popular, con tema */
+.boton-llamada-accion-popular-con-tema {
+    margin-top: auto;
+    width: 100%;
+    background-color: white; /* Fondo blanco (destaca sobre el fondo azul de la tarjeta popular) */
+    color: var(--cielo-600); /* Texto azul oscuro */
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+.boton-llamada-accion-popular-con-tema:hover { background-color: #f8fafc; } /* Blanco ligeramente más oscuro */
+html.tema-claro .boton-llamada-accion-popular-con-tema {
+    background-color: var(--fondo-secundario-claro) !important; /* Generalmente blanco */
+    color: var(--texto-enlace-claro) !important;
+}
+html.tema-claro .boton-llamada-accion-popular-con-tema:hover {
+    background-color: var(--fondo-acento-claro) !important; /* Un gris muy claro */
+}
+
+/* Estilo para el fondo del pie de página con tema */
+.fondo-pie-pagina-con-tema {
+    background-color: #0f172a; /* Igual al fondo primario oscuro */
+    border-top: 1px solid var(--borde-oscuro); /* Línea superior separadora */
+}
+html.tema-claro .fondo-pie-pagina-con-tema {
+    background-color: #e2e8f0; /* Un gris claro para el pie en tema claro */
+    border-top: 1px solid var(--borde-claro);
+}
+/* Contenido del pie de página */
+.contenido-pie-pagina {
+    display: flex;
+    flex-direction: column; /* En móviles, apilado */
+    align-items: center; /* Centrado en móviles */
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+@media (min-width: 768px) { /* En pantallas grandes */
+    .contenido-pie-pagina {
+        flex-direction: row; /* En línea */
+        justify-content: space-between; /* Separar copyright y enlaces */
+    }
+}
+/* Texto del pie de página con tema */
+.texto-pie-pagina-con-tema { color: var(--texto-secundario-oscuro); }
+html.tema-claro .texto-pie-pagina-con-tema { color: var(--texto-secundario-claro); }
+
+/* Contenedor para los enlaces del pie de página */
+.enlaces-pie-pagina {
+    display: flex;
+}
+.enlaces-pie-pagina > * + * { margin-left: 1.5rem; } /* Espacio entre enlaces */
+
+/* Enlaces del pie de página con tema (texto) */
+.enlace-texto-pie-pagina-con-tema { transition: color 0.15s ease-in-out; }
+.enlace-texto-pie-pagina-con-tema:hover { color: var(--texto-enlace-oscuro) !important; }
+html.tema-claro .enlace-texto-pie-pagina-con-tema:hover { color: var(--texto-enlace-claro) !important; }
+
+/* Botón para cambiar el tema (toggle) */
+.boton-interruptor-tema {
+    color: var(--texto-secundario-oscuro);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.625rem; /* Equivalente a p-2.5 de Tailwind */
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.boton-interruptor-tema:hover { background-color: var(--fondo-acento-oscuro); }
+.boton-interruptor-tema:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--fondo-acento-oscuro); /* Anillo de foco */
+}
+html.tema-claro .boton-interruptor-tema {
+    color: var(--texto-secundario-claro);
+}
+html.tema-claro .boton-interruptor-tema:hover {
+    background-color: var(--fondo-acento-claro) !important;
+}
+html.tema-claro .boton-interruptor-tema:focus {
+    box-shadow: 0 0 0 4px var(--fondo-acento-claro);
+}
+
+/* Sobrescribir colores de fondo y texto para secciones específicas en tema claro */
+/* Asumiendo que los IDs son #caracteristicas, #precios, #contacto */
+html.tema-claro #caracteristicas { background-color: var(--fondo-secundario-claro); } /* Generalmente blanco */
+html.tema-claro #caracteristicas .titulo-seccion { color: var(--texto-enlace-claro); }
+html.tema-claro #caracteristicas .subtitulo-seccion { color: var(--texto-secundario-claro); }
+
+html.tema-claro #precios { background-color: var(--fondo-primario-claro); } /* Generalmente un gris muy claro */
+html.tema-claro #precios .titulo-seccion { color: var(--texto-enlace-claro); }
+html.tema-claro #precios .subtitulo-seccion { color: var(--texto-secundario-claro); }
+
+
+html.tema-claro #contacto { background-color: var(--fondo-secundario-claro); } /* Generalmente blanco */
+html.tema-claro #contacto .titulo-seccion { color: var(--texto-enlace-claro); }
+html.tema-claro #contacto .subtitulo-seccion { color: var(--texto-secundario-claro); }
+
+/* Estilos para una sección de contenido genérica (ej. aviso-legal.html) */
+.seccion-contenido {
+    background-color: var(--fondo-papel-oscuro);
+    transition: background-color 0.3s ease;
+}
+html.tema-claro .seccion-contenido {
+    background-color: var(--fondo-papel-claro); /* Generalmente blanco */
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07);
+}
+.seccion-contenido h1 { color: var(--texto-primario-oscuro); }
+html.tema-claro .seccion-contenido h1 { color: var(--texto-primario-claro); }
+.seccion-contenido h2 {
+    color: var(--texto-enlace-oscuro);
+    border-bottom-color: var(--borde-oscuro);
+}
+html.tema-claro .seccion-contenido h2 {
+    color: var(--texto-enlace-claro);
+    border-bottom-color: var(--borde-claro);
+}
+.seccion-contenido h3 { color: var(--texto-primario-oscuro); }
+html.tema-claro .seccion-contenido h3 { color: var(--texto-primario-claro); }
+
+.seccion-contenido p, .seccion-contenido ul { color: var(--texto-secundario-oscuro); }
+html.tema-claro .seccion-contenido p, html.tema-claro .seccion-contenido ul { color: var(--texto-secundario-claro); }
+
+.seccion-contenido a { color: var(--texto-enlace-oscuro); }
+html.tema-claro .seccion-contenido a { color: var(--texto-enlace-claro); }
+html.tema-claro .seccion-contenido a:hover { color: #0369a1; } /* Un azul más oscuro para hover en tema claro */
+
+/* Sobrescrituras para clases de Tailwind que podrían estar en el HTML de otras páginas, adaptándolas al tema claro */
+html.tema-claro .text-slate-200 { color: var(--texto-primario-claro) !important; } /* Si usas text-slate-200 directamente */
+html.tema-claro .bg-slate-800 { background-color: var(--fondo-papel-claro) !important; } /* Si usas bg-slate-800 directamente */
+html.tema-claro .bg-slate-900 { background-color: var(--fondo-secundario-claro) !important; } /* Si usas bg-slate-900 directamente */
+html.tema-claro .border-slate-700 { border-color: var(--borde-claro) !important; } /* Si usas border-slate-700 directamente */
+
+/* Añadir un "check" visual a los ítems de características de precios */
+.elemento-caracteristica-tarjeta-precios::before {
+    content: "✓"; /* Símbolo de check */
+    color: var(--verde-400); /* Color verde para el check */
+    margin-right: 0.5rem; /* Espacio a la derecha */
+    font-weight: bold; /* Negrita para el check */
+}
+/* Si la tarjeta es popular, el check podría necesitar un color diferente si el fondo cambia mucho */
+.tarjeta-precios-popular .elemento-caracteristica-tarjeta-precios::before {
+    color: var(--verde-300); /* Un verde más claro, puede funcionar mejor sobre fondos oscuros/coloreados */
+}
+html.tema-claro .tarjeta-precios-popular .elemento-caracteristica-tarjeta-precios::before {
+    /* En tema claro, la tarjeta popular también tiene un fondo de color, así que mantenemos el verde claro */
+    color: var(--verde-300);
+}

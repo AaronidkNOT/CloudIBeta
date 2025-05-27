@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesar Pedido - Cloud¡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Asegúrate que style.css usa los nombres traducidos si es necesario -->
+</head>
+<body class="antialiased">
+
+    <header id="encabezado" class="barra-navegacion-fija transition-all duration-300">
+        <!-- ID 'encabezado' y clase 'barra-navegacion-fija' traducidas -->
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-sky-400 logo-con-tema">Cloud¡</a>
+                <!-- Clase 'logo-con-tema' traducida -->
+                <div class="flex items-center space-x-4">
+                    <button id="interruptor-tema" type="button" class="text-slate-400 hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-700 rounded-lg text-sm p-2.5">
+                        <!-- ID 'interruptor-tema' traducido -->
+                    </button>
+                    <a href="index.html#precios" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Ver Planes</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-xl fondo-papel-con-tema">
+                <!-- Clase 'fondo-papel-con-tema' traducida -->
+                <h1 id="titulo-checkout" class="text-3xl md:text-4xl font-bold text-white mb-8 text-center texto-primario-con-tema">Procesar Pedido</h1>
+                <!-- ID 'titulo-checkout' y clase 'texto-primario-con-tema' traducidas -->
+
+                <div id="detalles-plan" class="mb-8 p-6 bg-slate-700 rounded-lg fondo-acento-con-tema">
+                    <!-- ID 'detalles-plan' y clase 'fondo-acento-con-tema' traducidas -->
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-3 texto-enlace-con-tema">Plan Seleccionado: <span id="nombre-plan-seleccionado">Cargando...</span></h2>
+                    <!-- Clase 'texto-enlace-con-tema' e ID 'nombre-plan-seleccionado' traducidos -->
+                    <p class="text-slate-300 texto-secundario-con-tema">Precio: <span id="precio-plan-seleccionado">--</span></p>
+                    <!-- Clase 'texto-secundario-con-tema' e ID 'precio-plan-seleccionado' traducidos -->
+                    <p class="text-slate-300 texto-secundario-con-tema">Características clave: <span id="caracteristicas-plan-seleccionado">--</span></p>
+                    <!-- ID 'caracteristicas-plan-seleccionado' traducido -->
+                </div>
+
+                <form id="formulario-checkout" class="space-y-6">
+                    <!-- ID 'formulario-checkout' traducido -->
+                    <div>
+                        <label for="nombreCompleto" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Nombre Completo</label>
+                        <input type="text" id="nombreCompleto" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="Juan Pérez" required>
+                        <!-- ID 'nombreCompleto', for 'nombreCompleto' y clase 'entrada-con-tema' traducidos -->
+                    </div>
+                    <div>
+                        <label for="correoElectronico" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Correo Electrónico</label>
+                        <input type="email" id="correoElectronico" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="juan.perez@ejemplo.com" required>
+                        <!-- ID 'correoElectronico', for 'correoElectronico' traducidos -->
+                    </div>
+
+                    <div id="seccion-pago">
+                        <!-- ID 'seccion-pago' traducido -->
+                        <h3 class="text-xl font-semibold text-white mb-4 mt-8 texto-primario-con-tema">Detalles de Pago (Simulación)</h3>
+                        <div>
+                            <label for="numeroTarjeta" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Número de Tarjeta</label>
+                            <input type="text" id="numeroTarjeta" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="•••• •••• •••• ••••" required>
+                            <!-- ID 'numeroTarjeta', for 'numeroTarjeta' traducidos -->
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label for="fechaVencimiento" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Fecha de Vencimiento</label>
+                                <input type="text" id="fechaVencimiento" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="MM/AA" required>
+                                <!-- ID 'fechaVencimiento', for 'fechaVencimiento' traducidos -->
+                            </div>
+                            <div>
+                                <label for="codigoCVC" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">CVC</label>
+                                <input type="text" id="codigoCVC" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="•••" required>
+                                <!-- ID 'codigoCVC', for 'codigoCVC' traducidos -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="seccion-contacto" class="hidden">
+                        <!-- ID 'seccion-contacto' traducido -->
+                         <label for="mensaje" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Tu Mensaje</label>
+                        <textarea id="mensaje" rows="4" class="block p-2.5 w-full text-sm text-slate-200 bg-slate-700 rounded-lg border border-slate-600 focus:ring-sky-500 focus:border-sky-500 entrada-con-tema" placeholder="Escribe tu consulta aquí..."></textarea>
+                        <!-- ID 'mensaje', for 'mensaje' traducidos -->
+                    </div>
+
+                    <button type="submit" id="boton-enviar-formulario" class="w-full text-white bg-sky-500 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-3 text-center transition-colors">
+                        Pagar Ahora (Simulación)
+                    </button>
+                    <!-- ID 'boton-enviar-formulario' traducido -->
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-700 py-8 fondo-pie-pagina-con-tema">
+        <!-- Clase 'fondo-pie-pagina-con-tema' traducida -->
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400 texto-pie-pagina-con-tema">
+                <!-- Clase 'texto-pie-pagina-con-tema' traducida -->
+                <p class="mb-4 md:mb-0">© <span id="anioActual"></span> Cloud¡. Todos los derechos reservados.</p>
+                <!-- ID 'anioActual' traducido -->
+                <div class="flex space-x-4 md:space-x-6">
+                    <a href="aviso-legal.html" class="hover:text-sky-400 transition-colors enlace-texto-pie-pagina-con-tema">Aviso Legal</a>
+                    <a href="terminos-condiciones.html" class="hover:text-sky-400 transition-colors enlace-texto-pie-pagina-con-tema">Términos y Condiciones</a>
+                    <a href="politica-privacidad.html" class="hover:text-sky-400 transition-colors enlace-texto-pie-pagina-con-tema">Política de Privacidad</a>
+                    <!-- Clase 'enlace-texto-pie-pagina-con-tema' traducida -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script> <!-- Script principal -->
+    <script>
+        // Script específico para la página de checkout
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const plan = params.get('plan');
+            const accion = params.get('action'); // 'checkout' (implícito) o 'contact'
+
+            // Elementos del DOM con IDs traducidos
+            const elDetallesPlan = document.getElementById('detalles-plan');
+            const elNombrePlanSeleccionado = document.getElementById('nombre-plan-seleccionado');
+            const elPrecioPlanSeleccionado = document.getElementById('precio-plan-seleccionado');
+            const elCaracteristicasPlanSeleccionado = document.getElementById('caracteristicas-plan-seleccionado');
+            const elTituloCheckout = document.getElementById('titulo-checkout');
+            const elSeccionPago = document.getElementById('seccion-pago');
+            const elSeccionContacto = document.getElementById('seccion-contacto');
+            const elBotonEnviarFormulario = document.getElementById('boton-enviar-formulario');
+            const elFormulario = document.getElementById('formulario-checkout');
+            const campoMensaje = document.getElementById('mensaje'); // Obtener el campo de mensaje una vez
+
+            // Lógica para mostrar u ocultar secciones basada en los parámetros 'accion' o 'plan'
+            // CORRECCIÓN: Cambiado 'Profesional' a 'empresarial' para que coincida con el valor del plan en la URL
+            if (accion === 'contact' || plan === 'empresarial') {
+                if(elTituloCheckout) elTituloCheckout.textContent = 'Contactar con Ventas';
+                if(elDetallesPlan) elDetallesPlan.classList.add('hidden');
+                if(elSeccionPago) elSeccionPago.classList.add('hidden');
+                if(elSeccionContacto) elSeccionContacto.classList.remove('hidden');
+                if(elBotonEnviarFormulario) elBotonEnviarFormulario.textContent = 'Enviar Consulta';
+
+                // Asegurar que los campos de pago no sean 'required' si no se muestran
+                if(elSeccionPago) {
+                    elSeccionPago.querySelectorAll('input').forEach(input => input.required = false);
+                }
+                // El campo de mensaje SÍ es requerido para contacto
+                if (campoMensaje) campoMensaje.required = true;
+
+            } else if (plan) {
+                if(elTituloCheckout) elTituloCheckout.textContent = 'Procesar Pedido';
+                if(elDetallesPlan) elDetallesPlan.classList.remove('hidden');
+                if(elSeccionPago) elSeccionPago.classList.remove('hidden');
+                if(elSeccionContacto) elSeccionContacto.classList.add('hidden');
+                if(elBotonEnviarFormulario) elBotonEnviarFormulario.textContent = 'Pagar Ahora (Simulación)';
+
+                 // Asegurar que los campos de pago SÍ sean 'required'
+                if(elSeccionPago) {
+                    elSeccionPago.querySelectorAll('input').forEach(input => input.required = true);
+                }
+                // Y el campo de mensaje de contacto no sea 'required'
+                if (campoMensaje) campoMensaje.required = false;
+
+
+                let nombrePlan = '';
+                let precioPlan = '';
+                let caracteristicasPlan = '';
+
+                switch(plan) {
+                    case 'basico':
+                        nombrePlan = 'Básico';
+                        precioPlan = '$9.000/mes'; // Actualizado según tu código
+                        caracteristicasPlan = '1 Sitio Web, Mantenimiento por 2 meses, Subdominio unico, SSL Gratuito.'; // Actualizado
+                        break;
+                    case 'pro': // Este es el que llamas 'Estandar' en el nombre
+                        nombrePlan = 'Estandar';
+                        precioPlan = '$15.000/mes'; // Actualizado
+                        caracteristicasPlan = '2 Sitios Web, Mantenimiento por 6 meses, Subdominio personalizable, SSL y CDN, Soporte Prioritario.'; // Actualizado
+                        break;
+                    // No hay 'case' para 'empresarial' aquí porque ya se maneja en el if de arriba para contacto.
+                    // Si 'empresarial' no fuera para contacto, se necesitaría un case aquí.
+                    default:
+                        // Esto se ejecutaría si llega un plan que no es 'basico', 'pro', ni 'empresarial' (y no es accion=contact)
+                        if(elDetallesPlan) elDetallesPlan.classList.add('hidden');
+                        if(elTituloCheckout) elTituloCheckout.textContent = 'Plan no especificado';
+                        if(elFormulario) elFormulario.classList.add('hidden');
+                }
+                if(elNombrePlanSeleccionado) elNombrePlanSeleccionado.textContent = nombrePlan;
+                if(elPrecioPlanSeleccionado) elPrecioPlanSeleccionado.textContent = precioPlan;
+                if(elCaracteristicasPlanSeleccionado) elCaracteristicasPlanSeleccionado.textContent = caracteristicasPlan;
+
+            } else if (accion !== 'contact'){ // Si no hay plan Y no es acción de contacto
+                 if(elTituloCheckout) elTituloCheckout.textContent = 'Información no disponible';
+                 if(elDetallesPlan) elDetallesPlan.classList.add('hidden');
+                 if(elSeccionPago) elSeccionPago.classList.add('hidden');
+                 if(elFormulario) elFormulario.classList.add('hidden'); // Ocultar todo el formulario
+            }
+
+
+            if(elFormulario && !elFormulario.classList.contains('hidden')) { // Solo añadir listener si el formulario está visible
+                elFormulario.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Prevenir el envío real del formulario
+
+                    let formValido = true;
+                    // Validar solo los campos visibles y requeridos
+                    elFormulario.querySelectorAll('input[required], textarea[required]').forEach(input => {
+                        const parentSectionPago = input.closest('#seccion-pago');
+                        const parentSectionContacto = input.closest('#seccion-contacto');
+
+                        // Solo valida si el input está visible (su sección contenedora no tiene la clase 'hidden')
+                        // Y si el input es efectivamente 'required'
+                        let isVisibleAndRequired = input.required &&
+                            ( (parentSectionPago && !parentSectionPago.classList.contains('hidden')) ||
+                              (parentSectionContacto && !parentSectionContacto.classList.contains('hidden')) ||
+                              (!parentSectionPago && !parentSectionContacto) ); // Campos generales como nombre y email
+
+                        if (isVisibleAndRequired && !input.value.trim()) {
+                           formValido = false;
+                        }
+                    });
+
+                    if (!formValido) {
+                        alert('Por favor, completa todos los campos requeridos.');
+                        return;
+                    }
+
+                    // CORRECCIÓN: Cambiado 'Profesional' a 'empresarial'
+                    if (accion === 'contact' || plan === 'empresarial') {
+                        alert('¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.');
+                    } else {
+                        alert('¡Gracias por tu compra! (Esto es una simulación, no se ha procesado ningún pago real).');
+                    }
+                    elFormulario.reset(); // Limpiar el formulario
+                });
+            }
+        });
+    </script>
+</body>
+</html>
