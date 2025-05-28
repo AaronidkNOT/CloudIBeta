@@ -1,47 +1,37 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth"> <!-- scroll-smooth: Clase de Tailwind para desplazamiento suave -->
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud</title>
-    <!-- Tailwind CSS desde CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Conexiones para Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tu hoja de estilos personalizada -->
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased"> <!-- antialiased: Clase de Tailwind para suavizado de fuentes -->
+<body class="antialiased">
 
-<!-- Encabezado principal del sitio -->
+
 <header id="encabezado" class="barra-navegacion-fija">
-    <!-- Barra de navegación -->
-    <nav class="container mx-auto px-6 py-4"> <!-- container, mx-auto, px-6, py-4: Clases de Tailwind para centrado y espaciado -->
-        <div class="flex items-center justify-between"> <!-- Clases de Tailwind para layout flexible -->
-            <!-- Logo del sitio, con tema específico -->
+
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+           
             <a href="#" class="logo-con-tema">Cloud¡</a>
-            <!-- Contenedor para enlaces de navegación en escritorio (oculto en móvil) -->
-            <div class="hidden md:flex items-center space-x-6"> <!-- hidden, md:flex, space-x-6: Clases de Tailwind para responsividad y espaciado -->
-                <!-- Enlace de navegación con tema, apunta a la sección 'seccion-principal' -->
+            <div class="hidden md:flex items-center space-x-6">
                 <a href="#seccion-principal" class="enlace-navegacion-con-tema">Inicio</a>
-                <!-- Enlace de navegación con tema, apunta a la sección 'caracteristicas' -->
                 <a href="#caracteristicas" class="enlace-navegacion-con-tema">Características</a>
-                <!-- Enlace de navegación con tema, apunta a la sección 'precios' -->
                 <a href="#precios" class="enlace-navegacion-con-tema">Precios</a>
-                <!-- Botón para cambiar el tema (ej. claro/oscuro) -->
                 <button id="interruptor-tema" type="button" class="boton-interruptor-tema">
                 </button>
-                <!-- Enlace a la página de checkout con acción de contacto, estilizado como botón primario -->
                 <a href="checkout.html?action=contact" class="boton boton-primario">Contáctanos</a>
             </div>
-            <!-- Contenedor para botones en móvil (visible solo en móvil) -->
             <div class="md:hidden flex items-center space-x-3">
-                <!-- Botón para cambiar el tema en móvil -->
                 <button id="interruptor-tema-movil" type="button" class="boton-interruptor-tema">
                 </button>
-                <!-- Botón para desplegar/ocultar el menú en móvil -->
                 <button id="boton-menu-movil" class="enlace-navegacion-con-tema activador-menu-movil">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -49,7 +39,6 @@
                 </button>
             </div>
         </div>
-        <!-- Menú desplegable para móviles, inicialmente oculto -->
         <div id="menu-movil" class="hidden md:hidden mt-4 space-y-2">
             <a href="#seccion-principal" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Inicio</a>
             <a href="#caracteristicas" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Características</a>
@@ -58,49 +47,35 @@
         </div>
     </nav>
 </header>
-
-    <!-- Contenido principal de la página -->
     <main>
-        <!-- Sección principal o "héroe" -->
         <section id="seccion-principal" class="fondo-seccion-principal min-h-screen flex items-center">
             <div class="container mx-auto px-6 text-center">
-                <!-- Título principal, con animación -->
                 <h1 class="titulo-principal elemento-animado">
                     Crea tu propia web con <span class="acento-titulo-principal">Cloud¡</span>
                 </h1>
-                <!-- Subtítulo principal, con animación y retraso -->
                 <p class="subtitulo-principal elemento-animado retraso-200ms">
                     Desplegá tu emprendimiento con facilidad y escalabilidad. Potencia sin complicaciones.
                 </p>
-                 <!-- Botón de llamada a la acción principal, con animación y retraso -->
                  <a href="#precios" class="boton boton-llamada-accion-principal elemento-animado retraso-400ms">
                     Ver Planes
                 </a>
             </div>
         </section>
 
-        <!-- Sección de características -->
-        <section id="caracteristicas" class="seccion-con-relleno bg-slate-800"> <!-- bg-slate-800: Clase de Tailwind para color de fondo -->
+        <section id="caracteristicas" class="seccion-con-relleno bg-slate-800">
             <div class="container mx-auto px-6">
-                <!-- Título de la sección, con animación -->
                 <h2 class="titulo-seccion elemento-animado">Características Destacadas</h2>
-                <!-- Subtítulo de la sección, con animación y retraso -->
                 <p class="subtitulo-seccion elemento-animado retraso-100ms">
                     Todo lo que necesitás para lanzar y escalar tu presencia online con Cloud¡
                 </p>
-                <!-- Cuadrícula para mostrar tarjetas de características -->
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Tarjeta de característica individual, con animación y retraso -->
                     <div class="tarjeta-caracteristica elemento-animado retraso-200ms">
-                        <!-- Contenedor para el icono de la característica -->
                         <div class="contenedor-icono-caracteristica">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                             </svg>
                         </div>
-                        <!-- Título de la tarjeta de característica -->
                         <h3 class="titulo-tarjeta-caracteristica">Hosting en la Nube</h3>
-                        <!-- Texto descriptivo de la tarjeta de característica -->
                         <p class="texto-tarjeta-caracteristica">Infraestructura robusta y escalable para un rendimiento óptimo y alta disponibilidad.</p>
                     </div>
                     <div class="tarjeta-caracteristica elemento-animado retraso-300ms">
@@ -125,7 +100,6 @@
             </div>
         </section>
 
-        <!-- Sección de planes y precios -->
         <section id="precios" class="seccion-con-relleno">
             <div class="container mx-auto px-6">
                 <h2 class="titulo-seccion elemento-animado">Planes y Precios Flexibles</h2>
@@ -133,7 +107,6 @@
                     Elegí el plan que mejor se adapte a tus necesidades. Todos incluyen subdominios personalizados.
                 </p>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Tarjeta de precio -->
                     <div class="tarjeta-precios elemento-animado retraso-200ms">
                         <h3 class="nombre-tarjeta-precios">Básico</h3>
                         <p class="precio-tarjeta-precios">$9.000<span class="unidad-precio-tarjeta-precios">/mes</span></p>
@@ -144,11 +117,8 @@
                             <li class="elemento-caracteristica-tarjeta-precios">Subdominio unico</li>
                             <li class="elemento-caracteristica-tarjeta-precios">SSL Gratuito</li>
                         </ul>
-                        <!-- Enlace para contratar plan básico -->
                         <a href="checkout.html?plan=basico" class="boton boton-llamada-accion-con-tema">Comenzar ahora</a>
                     </div>
-
-                    <!-- Tarjeta de precio popular -->
                     <div class="tarjeta-precios tarjeta-precios-popular elemento-animado retraso-300ms">
                         <span class="distintivo-popular-tarjeta-precios">Más Popular</span>
                         <h3 class="nombre-tarjeta-precios">Estandar</h3>
@@ -181,7 +151,6 @@
             </div>
         </section>
 
-        <!-- Sección de contacto -->
         <section id="contacto" class="seccion-con-relleno bg-slate-800">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="titulo-seccion elemento-animado">¿Listo para Empezar?</h2>
@@ -209,8 +178,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Script personalizado, cargado de forma diferida -->
     <script src="script.js" defer></script>
 
 </body>
