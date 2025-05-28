@@ -1,89 +1,73 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth"> <!-- scroll-smooth: Clase de Tailwind para desplazamiento suave -->
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones - Cloud¡</title>
-    <!-- Tailwind CSS desde CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Conexiones para Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos base para esta página */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0f172a; /* color: slate-900 de Tailwind */
-            color: #e2e8f0; /* color: slate-200 de Tailwind */
+            background-color: #0f172a;
+            color: #e2e8f0;
         }
-        /* Estilos para la sección de contenido principal */
-        .seccion-contenido h2 { /* Traducido de .content-section */
-            font-size: 1.875rem; /* Tailwind: text-3xl */
-            font-weight: 600; /* Tailwind: font-semibold */
-            color: #38bdf8; /* Tailwind: text-sky-400 */
-            margin-bottom: 1rem; /* Tailwind: mb-4 */
-            padding-bottom: 0.5rem; /* Tailwind: pb-2 */
-            border-bottom: 1px solid #334155; /* Tailwind: border-slate-700 */
+        .seccion-contenido h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #334155;
         }
         .seccion-contenido h3 {
-            font-size: 1.25rem; /* Tailwind: text-xl */
-            font-weight: 600; /* Tailwind: font-semibold */
-            color: #cbd5e1; /* Tailwind: text-slate-300 */
-            margin-top: 1.5rem; /* Tailwind: mt-6 */
-            margin-bottom: 0.75rem; /* Tailwind: mb-3 */
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
         }
         .seccion-contenido p, .seccion-contenido ul {
-            margin-bottom: 1rem; /* Tailwind: mb-4 */
-            line-height: 1.75; /* Tailwind: leading-relaxed */
-            color: #94a3b8; /* Tailwind: text-slate-400 */
+            margin-bottom: 1rem;
+            line-height: 1.75;
+            color: #94a3b8;
         }
         .seccion-contenido ul {
-            list-style-type: disc; /* Viñetas de disco */
-            margin-left: 1.5rem; /* Tailwind: ml-6 */
+            list-style-type: disc;
+            margin-left: 1.5rem;
         }
         .seccion-contenido a {
-            color: #38bdf8; /* Tailwind: text-sky-400 */
-            text-decoration: underline; /* Subrayado */
+            color: #38bdf8;
+            text-decoration: underline;
         }
         .seccion-contenido a:hover {
-            color: #7dd3fc; /* Tailwind: text-sky-300 */
+            color: #7dd3fc;
         }
     </style>
 </head>
-<body class="antialiased"> <!-- antialiased: Clase de Tailwind para suavizado de fuentes -->
+<body class="antialiased">
 
-    <!-- Encabezado de la página -->
     <header class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-700">
-        <!-- Clases de Tailwind para fondo, efecto blur, posición fija, z-index y borde inferior -->
         <nav class="container mx-auto px-6 py-4">
-            <!-- Clases de Tailwind para centrado y espaciado -->
             <div class="flex items-center justify-between">
-                <!-- Clases de Tailwind para layout flexible y alineación -->
                 <a href="index.html" class="text-2xl font-bold text-sky-400">Cloud¡</a>
-                <!-- Enlace a la página principal, con estilo de Tailwind -->
                 <a href="index.html#pricing" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Ver Planes</a>
-                <!-- Botón estilizado con Tailwind -->
             </div>
         </nav>
     </header>
-
-    <!-- Contenido principal de los términos y condiciones -->
     <main class="py-12 md:py-16">
-        <!-- Clases de Tailwind para relleno vertical responsivo -->
         <div class="container mx-auto px-6">
-            <!-- Contenedor para el contenido, con estilo de tarjeta -->
             <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-xl seccion-contenido">
-                <!-- Clases de Tailwind para fondo, relleno, bordes redondeados, sombra y la clase personalizada 'seccion-contenido' -->
                 <h1 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Términos y Condiciones de Uso</h1>
-                <!-- Título principal -->
 
                 <h2>1. ACEPTACIÓN DE LOS TÉRMINOS</h2>
                 <p>Bienvenido a Cloud¡ (en adelante, "el Servicio" o "nosotros"). Al acceder o utilizar nuestro servicio de alojamiento web y subdominios personalizados, usted (en adelante, "el Usuario" o "usted") acepta estar legalmente obligado por estos Términos y Condiciones de Uso ("Términos"). Si no está de acuerdo con alguno de estos términos, no debe utilizar el Servicio.</p>
                 <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento. Le notificaremos los cambios importantes publicando los nuevos Términos en esta página. Es su responsabilidad revisar estos Términos periódicamente.</p>
 
                 <h2>2. DESCRIPCIÓN DEL SERVICIO</h2>
-                <p>Cloud¡ proporciona una plataforma de alojamiento de sitios web en la nube que permite a los usuarios desplegar sus proyectos y utilizar subdominios personalizados (ej: <code>suproyecto.Cloud¡.com</code>). Las características específicas de cada plan de servicio se detallan en nuestra sección de <a href="index.html#pricing">Precios</a>.</p>
+                <p>Cloud¡ proporciona una plataforma de alojamiento de sitios web en la nube que permite a los usuarios desplegar sus proyectos y utilizar subdominios personalizados (ej: <code>suproyecto.Cloud¡.com</code>). Las características específicas de cada plan de servicio se detallan en nuestra sección de <a href="index.html#pricios">Precios</a>.</p>
 
                 <h2>3. REGISTRO Y CUENTA DE USUARIO</h2>
                 <h3>3.1. Elegibilidad</h3>
@@ -131,21 +115,15 @@
                 <p>Estos Términos se regirán e interpretarán de acuerdo con las leyes de Argentina, sin tener en cuenta sus disposiciones sobre conflicto de leyes. Cualquier disputa que surja de o esté relacionada con estos Términos o el Servicio se someterá a la jurisdicción exclusiva de los tribunales de Ciudad Carhue, Argentina.</p>
 
                 <p class="mt-8 text-sm">Fecha de última actualización: <span id="ultimaActualizacion"></span></p>
-                <!-- ID 'ultimaActualizacion' para el script -->
             </div>
         </div>
     </main>
 
-    <!-- Pie de página -->
     <footer class="bg-slate-900 border-t border-slate-700 py-8">
-        <!-- Clases de Tailwind para fondo, borde superior y relleno vertical -->
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-                <!-- Clases de Tailwind para layout responsivo, alineación, tamaño de texto y color -->
                 <p class="mb-4 md:mb-0">© <span id="anioActual"></span> Cloud¡. Todos los derechos reservados.</p>
-                <!-- ID 'anioActual' para el script -->
                 <div class="flex space-x-4 md:space-x-6">
-                    <!-- Clases de Tailwind para espaciado entre enlaces -->
                     <a href="aviso-legal.html" class="hover:text-sky-400 transition-colors">Aviso Legal</a>
                     <a href="terminos-condiciones.html" class="hover:text-sky-400 transition-colors">Términos y Condiciones</a>
                     <a href="politica-privacidad.html" class="hover:text-sky-400 transition-colors">Política de Privacidad</a>
@@ -154,11 +132,8 @@
         </div>
     </footer>
 
-    <!-- Script simple para actualizar el año y la fecha de última actualización -->
     <script>
-        // Actualiza el año actual en el pie de página
         document.getElementById('anioActual').textContent = new Date().getFullYear();
-        // Actualiza la fecha de última actualización en el contenido principal
         document.getElementById('ultimaActualizacion').textContent = new Date().toLocaleDateString('es-ES', {
             year: 'numeric',
             month: 'long',
