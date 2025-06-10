@@ -537,3 +537,6 @@ html.tema-claro .border-slate-700 { border-color: var(--borde-claro) !important;
 html.tema-claro .tarjeta-precios-popular .elemento-caracteristica-tarjeta-precios::before {
     color: var(--verde-300);
 }
+html.tema-claro .fondo-seccion-principal {
+    background-image: linear-gradient(to bottom, rgba(241, 245, 249, 0.8), #e2e8f0);
+}
