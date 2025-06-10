@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximamente</title>
+    <link rel="stylesheet" href="stylemapa.css">
+</head>
+<body>
+    <!-- BOTÓN PARA VOLVER AL INICIO -->
+    <a href="index.html" class="back-to-home-button" title="Volver a la página principal">
+        <!-- Puedes usar texto o un icono SVG -->
+        <!-- Opción con texto: -->
+        <!-- Volver al Inicio -->
+        <!-- Opción con icono SVG (simple flecha izquierda): -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        <span>Inicio</span>
+    </a>
+
+    <div class="coming-soon-container">
+        <h1 class="main-title">Próximamente</h1>
+        <p class="subtitle">Estamos trabajando en algo increíble para ti.</p>
+        <div class="loader"></div>
+    </div>
+
+    <div class="map-preview-container" id="mapPreview">
+        <div class="preview-header">
+            <h4>Avance del Sitio</h4>
+        </div>
+        <img src="imagen muestra.PNG" alt="Vista previa del mapa">
+        <p class="preview-caption">Así se verá nuestro mapa interactivo.</p>
+    </div>
+
+    <script src="scriptmapa.js"></script>
+</body>
+</html>

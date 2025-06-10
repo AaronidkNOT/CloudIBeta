@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Evita scrollbars si la preview es grande al inicio */
+    position: relative; /* Para posicionar la preview */
+}
+
+.coming-soon-container {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInContainer 1s ease-out forwards;
+}
+
+@keyframes fadeInContainer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-title {
+    font-size: clamp(2.5rem, 8vw, 5rem); /* Tamaño de fuente adaptable */
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71, #9400d3);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulseText 2.5s infinite ease-in-out, shineText 5s infinite linear;
+}
+
+@keyframes pulseText {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+}
+
+@keyframes shineText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 300;
+    color: #b0b0d0;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInSubtitle 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInSubtitle {
+    to {
+        opacity: 1;
+    }
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(224, 224, 224, 0.2);
+    border-top-color: #ff8a00;
+    border-radius: 50%;
+    animation: spinLoader 1s linear infinite;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeInLoader 1s ease-out 1s forwards, spinLoader 1s linear 1s infinite;
+}
+
+@keyframes spinLoader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes fadeInLoader {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos para la vista previa del mapa */
+.map-preview-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Efecto cristal */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transform: scale(0) translateX(100px); /* Empieza pequeño y fuera de pantalla */
+    transform-origin: bottom right;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con rebote */
+    z-index: 10;
+}
+
+.map-preview-container.show {
+    transform: scale(1) translateX(0);
+}
+
+.preview-header {
+    margin-bottom: 10px;
+    text-align: left;
+}
+.preview-header h4 {
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.map-preview-container img,
+.map-preview-container iframe {
+    width: 100%;
+    height: auto; /* Para la imagen */
+    max-height: 280px; /* Para el iframe, ajusta según necesites */
+    display: block;
+    border-radius: 5px;
+    border: none; /* Para el iframe */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+}
+
+.preview-caption {
+    font-size: 0.75rem;
+    color: #ccc;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .map-preview-container {
+        width: 250px; /* Más pequeño en móviles */
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+    .preview-header h4 {
+        font-size: 0.8rem;
+    }
+    .preview-caption {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-preview-container {
+        /* Opcional: ocultarlo en pantallas muy pequeñas si molesta */
+        /* display: none; */
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        bottom: 10px;
+        transform-origin: bottom center; /* Para la animación si está centrado */
+    }
+}
+/* ... (todo tu CSS anterior va aquí) ... */
+
+/* Estilos para el botón de Volver al Inicio */
+.back-to-home-button {
+    position: fixed; /* Se mantiene fijo en la pantalla al hacer scroll */
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #0ea5e9; /* Un color del tema, con algo de transparencia */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex; /* Para alinear el icono y el texto si usas ambos */
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+    /* backdrop-filter: blur(5px); Opcional para efecto cristalino si el fondo lo permite */
+}
+
+.back-to-home-button:hover {
+    background-color: #0284c7; /* Color de hover del tema */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+.back-to-home-button svg {
+    width: 18px; /* Tamaño del icono */
+    height: 18px;
+}
+
+/* Ajustes para el botón en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .back-to-home-button {
+        top: 15px;
+        right: 15px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    .back-to-home-button svg {
+        width: 16px;
+        height: 16px;
+    }
+}
