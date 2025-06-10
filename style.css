@@ -1,5 +1,4 @@
 :root {
-    /* Variables para el tema oscuro */
     --fondo-primario-oscuro: #0f172a;
     --fondo-secundario-oscuro: #1e293b;
     --fondo-acento-oscuro: #334155;
@@ -9,17 +8,15 @@
     --texto-enlace-oscuro: #38bdf8;
     --borde-oscuro: #334155;
 
-    /* Variables para el tema claro */
     --fondo-primario-claro: #f1f5f9;
     --fondo-secundario-claro: #ffffff;
     --fondo-acento-claro: #e2e8f0;
     --fondo-papel-claro: #ffffff;
-    --texto-primario-claro: #1e293b;
+    --texto-primario-claro: #4f5a6b;
     --texto-secundario-claro: #475569;
     --texto-enlace-claro: #0ea5e9;
     --borde-claro: #cbd5e1;
 
-    /* Paleta de colores (estos son nombres comunes de paletas como Tailwind) */
     --cielo-500: #0ea5e9;
     --cielo-600: #0284c7;
     --rosa-500: #ec4899;
@@ -41,7 +38,6 @@ html.tema-claro body {
     color: var(--fondo-primario-claro);
 }
 
-
 .elemento-animado {
     opacity: 0;
     transform: translateY(20px);
@@ -56,7 +52,6 @@ html.tema-claro body {
 .retraso-200ms { transition-delay: 0.2s !important; }
 .retraso-300ms { transition-delay: 0.3s !important; }
 .retraso-400ms { transition-delay: 0.4s !important; }
-
 
 .barra-navegacion-fija {
     position: sticky;
@@ -107,13 +102,13 @@ html.tema-claro .enlace-navegacion-con-tema:hover { color: var(--texto-enlace-cl
 .enlace-navegacion-movil-con-tema:hover { background-color: var(--fondo-acento-oscuro); }
 html.tema-claro .enlace-navegacion-movil-con-tema:hover { background-color: var(--fondo-acento-claro) !important; }
 
-
 .boton {
     font-weight: 600;
     border-radius: 0.5rem;
     transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
     text-align: center;
 }
+
 .boton-primario {
     background-color: var(--cielo-500);
     color: white;
@@ -148,6 +143,7 @@ html.tema-claro .enlace-navegacion-movil-con-tema:hover { background-color: var(
 .acento-titulo-principal { color: var(--texto-enlace-oscuro); }
 html.tema-claro .titulo-principal { color: var(--texto-primario-claro); }
 html.tema-claro .acento-titulo-principal { color: var(--texto-enlace-claro); }
+
 
 .subtitulo-principal {
     font-size: 1.125rem;
@@ -226,7 +222,8 @@ html.tema-claro .subtitulo-seccion { color: var(--texto-secundario-claro); }
     border-radius: 0.75rem;
     box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
 }
-html.tema-claro #caracteristicas .tarjeta-caracteristica { 
+
+html.tema-claro #caracteristicas .tarjeta-caracteristica {
     background-color: var(--fondo-papel-claro) !important;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07);
 }
@@ -234,10 +231,10 @@ html.tema-claro #caracteristicas .tarjeta-caracteristica {
 .contenedor-icono-caracteristica {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     width: 4rem;
     height: 4rem;
-    background-color: var(--cielo-500); 
+    background-color: var(--cielo-500);
     color: white;
     border-radius: 9999px;
     margin-bottom: 1.5rem;
@@ -248,6 +245,7 @@ html.tema-claro #caracteristicas .tarjeta-caracteristica {
     width: 2rem;
     height: 2rem;
 }
+
 .titulo-tarjeta-caracteristica {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -310,6 +308,7 @@ html.tema-claro .tarjeta-precios-popular {
     background-color: var(--texto-enlace-claro) !important;
     border-color: var(--texto-enlace-claro) !important;
 }
+
 .distintivo-popular-tarjeta-precios {
     position: absolute;
     top: 0;
@@ -331,9 +330,11 @@ html.tema-claro .tarjeta-precios-popular {
     color: var(--texto-primario-oscuro);
     margin-bottom: 0.5rem;
 }
+
 .tarjeta-precios-popular .nombre-tarjeta-precios { color: white !important; }
 html.tema-claro .nombre-tarjeta-precios { color: var(--texto-primario-claro) !important; }
 html.tema-claro .tarjeta-precios-popular .nombre-tarjeta-precios { color: white !important; }
+
 
 .precio-tarjeta-precios {
     color: var(--texto-enlace-oscuro);
@@ -346,14 +347,17 @@ html.tema-claro .tarjeta-precios-popular .nombre-tarjeta-precios { color: white 
 html.tema-claro .precio-tarjeta-precios { color: var(--texto-enlace-claro) !important; }
 html.tema-claro .precio-tarjeta-precios-popular { color: white !important; }
 
+
 .unidad-precio-tarjeta-precios {
     font-size: 1.125rem;
     color: var(--texto-secundario-oscuro);
     font-weight: 400;
 }
+
 .unidad-precio-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; }
 html.tema-claro .unidad-precio-tarjeta-precios { color: var(--texto-secundario-claro) !important; }
 html.tema-claro .unidad-precio-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; }
+
 
 .descripcion-tarjeta-precios {
     color: var(--texto-secundario-oscuro);
@@ -363,6 +367,7 @@ html.tema-claro .unidad-precio-tarjeta-precios-popular { color: var(--cielo-100,
 .descripcion-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; }
 html.tema-claro .descripcion-tarjeta-precios { color: var(--texto-secundario-claro) !important; }
 html.tema-claro .descripcion-tarjeta-precios-popular { color: var(--cielo-100, #e0f2fe) !important; }
+
 
 .caracteristicas-tarjeta-precios {
     margin-bottom: 2rem;
@@ -374,10 +379,12 @@ html.tema-claro .descripcion-tarjeta-precios-popular { color: var(--cielo-100, #
 html.tema-claro .caracteristicas-tarjeta-precios { color: var(--texto-secundario-claro) !important; }
 html.tema-claro .caracteristicas-tarjeta-precios-popular { color: white !important; }
 
+
 .elemento-caracteristica-tarjeta-precios {
     display: flex;
     align-items: center;
 }
+
 .icono-caracteristica-tarjeta-precios {
     width: 1.25rem;
     height: 1.25rem;
@@ -423,6 +430,7 @@ html.tema-claro .boton-llamada-accion-popular-con-tema {
 }
 html.tema-claro .boton-llamada-accion-popular-con-tema:hover {
     background-color: var(--fondo-acento-claro) !important;
+}
 
 .fondo-pie-pagina-con-tema {
     background-color: #0f172a;
@@ -432,6 +440,7 @@ html.tema-claro .fondo-pie-pagina-con-tema {
     background-color: #e2e8f0;
     border-top: 1px solid var(--borde-claro);
 }
+
 .contenido-pie-pagina {
     display: flex;
     flex-direction: column;
@@ -445,6 +454,7 @@ html.tema-claro .fondo-pie-pagina-con-tema {
         justify-content: space-between;
     }
 }
+
 .texto-pie-pagina-con-tema { color: var(--texto-secundario-oscuro); }
 html.tema-claro .texto-pie-pagina-con-tema { color: var(--texto-secundario-claro); }
 
@@ -452,6 +462,7 @@ html.tema-claro .texto-pie-pagina-con-tema { color: var(--texto-secundario-claro
     display: flex;
 }
 .enlaces-pie-pagina > * + * { margin-left: 1.5rem; }
+
 .enlace-texto-pie-pagina-con-tema { transition: color 0.15s ease-in-out; }
 .enlace-texto-pie-pagina-con-tema:hover { color: var(--texto-enlace-oscuro) !important; }
 html.tema-claro .enlace-texto-pie-pagina-con-tema:hover { color: var(--texto-enlace-claro) !important; }
@@ -520,6 +531,7 @@ html.tema-claro .seccion-contenido p, html.tema-claro .seccion-contenido ul { co
 .seccion-contenido a { color: var(--texto-enlace-oscuro); }
 html.tema-claro .seccion-contenido a { color: var(--texto-enlace-claro); }
 html.tema-claro .seccion-contenido a:hover { color: #0369a1; }
+
 html.tema-claro .text-slate-200 { color: var(--texto-primario-claro) !important; }
 html.tema-claro .bg-slate-800 { background-color: var(--fondo-papel-claro) !important; }
 html.tema-claro .bg-slate-900 { background-color: var(--fondo-secundario-claro) !important; }
@@ -529,8 +541,9 @@ html.tema-claro .border-slate-700 { border-color: var(--borde-claro) !important;
     content: "✓";
     color: var(--verde-400);
     margin-right: 0.5rem;
-    font-weight: bold; 
+    font-weight: bold;
 }
+
 .tarjeta-precios-popular .elemento-caracteristica-tarjeta-precios::before {
     color: var(--verde-300);
 }
@@ -538,5 +551,6 @@ html.tema-claro .tarjeta-precios-popular .elemento-caracteristica-tarjeta-precio
     color: var(--verde-300);
 }
 html.tema-claro .fondo-seccion-principal {
-    background-image: linear-gradient(to bottom, rgba(241, 245, 249, 0.8), #e2e8f0);
+    background-image: linear-gradient(to bottom, rgba(241, 245, 249, 0.8), #e2e8f0) !important;
+
 }
