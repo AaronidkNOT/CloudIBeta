@@ -15,8 +15,8 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    overflow: hidden; /* Evita scrollbars si la preview es grande al inicio */
-    position: relative; /* Para posicionar la preview */
+    overflow: hidden;
+    position: relative;
 }
 
 .coming-soon-container {
@@ -33,7 +33,7 @@ body {
 }
 
 .main-title {
-    font-size: clamp(2.5rem, 8vw, 5rem); /* Tamaño de fuente adaptable */
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -99,21 +99,20 @@ body {
     }
 }
 
-/* Estilos para la vista previa del mapa */
 .map-preview-container {
     position: absolute;
     bottom: 20px;
     right: 20px;
     width: 450px;
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); /* Efecto cristal */
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transform: scale(0) translateX(100px); /* Empieza pequeño y fuera de pantalla */
+    transform: scale(0) translateX(100px);
     transform-origin: bottom right;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con rebote */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 10;
 }
 
@@ -134,12 +133,12 @@ body {
 .map-preview-container img,
 .map-preview-container iframe {
     width: 100%;
-    height: auto; /* Para la imagen */
-    max-height: 280px; /* Para el iframe, ajusta según necesites */
+    height: auto;
+    max-height: 280px;
     display: block;
     border-radius: 5px;
-    border: none; /* Para el iframe */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    border: none;
+    object-fit: cover;
 }
 
 .preview-caption {
@@ -149,10 +148,9 @@ body {
     text-align: center;
 }
 
-/* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
     .map-preview-container {
-        width: 250px; /* Más pequeño en móviles */
+        width: 250px;
         bottom: 10px;
         right: 10px;
         padding: 10px;
@@ -167,49 +165,42 @@ body {
 
 @media (max-width: 480px) {
     .map-preview-container {
-        /* Opcional: ocultarlo en pantallas muy pequeñas si molesta */
-        /* display: none; */
         width: 90%;
         left: 5%;
         right: 5%;
         bottom: 10px;
-        transform-origin: bottom center; /* Para la animación si está centrado */
+        transform-origin: bottom center;
     }
 }
-/* ... (todo tu CSS anterior va aquí) ... */
-
-/* Estilos para el botón de Volver al Inicio */
 .back-to-home-button {
-    position: fixed; /* Se mantiene fijo en la pantalla al hacer scroll */
+    position: fixed; 
     top: 20px;
     right: 20px;
     padding: 10px 15px;
-    background-color: #0ea5e9; /* Un color del tema, con algo de transparencia */
+    background-color: #0ea5e9;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 500;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: flex; /* Para alinear el icono y el texto si usas ambos */
+    display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
-    /* backdrop-filter: blur(5px); Opcional para efecto cristalino si el fondo lo permite */
+    gap: 8px;
 }
 
 .back-to-home-button:hover {
-    background-color: #0284c7; /* Color de hover del tema */
-    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    background-color: #0284c7;
+    transform: translateY(-2px);
 }
 
 .back-to-home-button svg {
-    width: 18px; /* Tamaño del icono */
+    width: 18px;
     height: 18px;
 }
 
-/* Ajustes para el botón en pantallas más pequeñas */
 @media (max-width: 768px) {
     .back-to-home-button {
         top: 15px;
