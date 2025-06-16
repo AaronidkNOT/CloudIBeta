@@ -5,34 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased">
-
+    <div id="particles-js"></div>
 
 <header id="encabezado" class="barra-navegacion-fija">
-
     <nav class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
-           
             <a href="#" class="logo-con-tema">Cloud¡</a>
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#seccion-principal" class="enlace-navegacion-con-tema">Inicio</a>
                 <a href="#caracteristicas" class="enlace-navegacion-con-tema">Características</a>
                 <a href="#precios" class="enlace-navegacion-con-tema">Precios</a>
-                <a href="mapa.html" class="enlace-navegacion-con-tema">Ver Mapa (Proximamente)</a>
-                <button id="interruptor-tema" type="button" class="boton-interruptor-tema">
-                </button>
+                <a href="mapa.html" class="enlace-navegacion-con-tema">Ver Mapa</a>
                 <a href="checkout.html?action=contact" class="boton boton-primario">Contáctanos</a>
             </div>
             <div class="md:hidden flex items-center space-x-3">
-                <button id="interruptor-tema-movil" type="button" class="boton-interruptor-tema">
-                </button>
                 <button id="boton-menu-movil" class="enlace-navegacion-con-tema activador-menu-movil">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -44,11 +36,12 @@
             <a href="#seccion-principal" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Inicio</a>
             <a href="#caracteristicas" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Características</a>
             <a href="#precios" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Precios</a>
-            <a href="mapa.html" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Ver Mapa (Proximamente)</a>
-            <a href="checkout.html?accion=contacto" class="boton boton-primario boton-bloque-movil">Contáctanos</a>
+            <a href="mapa.html" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Ver Mapa</a>
+            <a href="checkout.html?accion=contact" class="boton boton-primario boton-bloque-movil">Contáctanos</a>
         </div>
     </nav>
 </header>
+
     <main>
         <section id="seccion-principal" class="fondo-seccion-principal min-h-screen flex items-center">
             <div class="container mx-auto px-6 text-center">
@@ -58,13 +51,13 @@
                 <p class="subtitulo-principal elemento-animado retraso-200ms">
                     Desplegá tu emprendimiento con facilidad y escalabilidad. Potencia sin complicaciones.
                 </p>
-                 <a href="#precios" class="boton boton-llamada-accion-principal elemento-animado retraso-400ms">
+                <a href="#precios" class="boton boton-llamada-accion-principal elemento-animado retraso-400ms">
                     Ver Planes
                 </a>
             </div>
         </section>
 
-        <section id="caracteristicas" class="seccion-con-relleno bg-slate-800">
+        <section id="caracteristicas" class="seccion-con-relleno bg-[rgba(30,41,59,0.6)]">
             <div class="container mx-auto px-6">
                 <h2 class="titulo-seccion elemento-animado">Características Destacadas</h2>
                 <p class="subtitulo-seccion elemento-animado retraso-100ms">
@@ -82,12 +75,12 @@
                     </div>
                     <div class="tarjeta-caracteristica elemento-animado retraso-300ms">
                         <div class="contenedor-icono-caracteristica">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                             </svg>
                         </div>
                         <h3 class="titulo-tarjeta-caracteristica">Subdominios Personalizados</h3>
-                        <p class="texto-tarjeta-caracteristica">Creá subdominios personalizados (ej: <code class="codigo-resaltado">tuproyecto.Cloud¡.com</code>) fácilmente para tener tu sitio web.</p>
+                        <p class="texto-tarjeta-caracteristica">Creá subdominios ilimitados (ej: <code class="codigo-resaltado">tuproyecto.Cloud¡.com</code>) fácilmente para tener tu sitio web.</p>
                     </div>
                     <div class="tarjeta-caracteristica elemento-animado retraso-400ms">
                         <div class="contenedor-icono-caracteristica">
@@ -121,6 +114,7 @@
                         </ul>
                         <a href="checkout.html?plan=basico" class="boton boton-llamada-accion-con-tema">Comenzar ahora</a>
                     </div>
+
                     <div class="tarjeta-precios tarjeta-precios-popular elemento-animado retraso-300ms">
                         <span class="distintivo-popular-tarjeta-precios">Más Popular</span>
                         <h3 class="nombre-tarjeta-precios">Estandar</h3>
@@ -129,7 +123,7 @@
                         <ul class="caracteristicas-tarjeta-precios caracteristicas-tarjeta-precios-popular">
                             <li class="elemento-caracteristica-tarjeta-precios">2 sitios web</li>
                             <li class="elemento-caracteristica-tarjeta-precios">Matenimiento gratuito por 6 meses</li>
-                            <li class="elemento-caracteristica-tarjeta-precios">Subdominios Personalizables</li>
+                            <li class="elemento-caracteristica-tarjeta-precios">Subdominios personalizados</li>
                             <li class="elemento-caracteristica-tarjeta-precios">SSL gratuito y CDN</li>
                             <li class="elemento-caracteristica-tarjeta-precios">Soporte prioritario</li>
                         </ul>
@@ -153,7 +147,7 @@
             </div>
         </section>
 
-        <section id="contacto" class="seccion-con-relleno bg-slate-800">
+        <section id="contacto" class="seccion-con-relleno bg-[rgba(30,41,59,0.6)]">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="titulo-seccion elemento-animado">¿Listo para Empezar?</h2>
                 <p class="subtitulo-seccion elemento-animado retraso-100ms">
@@ -167,7 +161,6 @@
 
     </main>
 
-    <!-- Pie de página -->
     <footer class="fondo-pie-pagina-con-tema py-8">
         <div class="container mx-auto px-6">
             <div class="contenido-pie-pagina texto-pie-pagina-con-tema">
@@ -180,6 +173,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="particle.js" defer></script>
     <script src="script.js" defer></script>
 
 </body>

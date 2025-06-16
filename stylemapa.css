@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
+#particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
 * {
     margin: 0;
     padding: 0;
@@ -172,8 +179,9 @@ body {
         transform-origin: bottom center;
     }
 }
+
 .back-to-home-button {
-    position: fixed; 
+    position: fixed;
     top: 20px;
     right: 20px;
     padding: 10px 15px;

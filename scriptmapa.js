@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     const mainTitle = document.querySelector('.main-title');
     const originalText = mainTitle.textContent;
     mainTitle.textContent = '';

@@ -9,60 +9,80 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1; 
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
+            background-color: #0f172a; 
+            color: #e2e8f0; 
         }
-
-        .seccion-contenido h2 {
-            font-size: 1.875rem;
-            font-weight: 600;
-            color: #38bdf8;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #334155;
+        
+        .seccion-contenido h2 { 
+            font-size: 1.875rem; 
+            font-weight: 600; 
+            color: #38bdf8; 
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 1px solid #334155; 
         }
         .seccion-contenido h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #cbd5e1;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.25rem; 
+            font-weight: 600; 
+            color: #cbd5e1; 
+            margin-top: 1.5rem; 
+            margin-bottom: 0.75rem; 
         }
         .seccion-contenido p, .seccion-contenido ul {
-            margin-bottom: 1rem;
-            line-height: 1.75;
-            color: #94a3b8;
+            margin-bottom: 1rem; 
+            line-height: 1.75; 
+            color: #94a3b8; 
         }
         .seccion-contenido ul {
-            list-style-type: disc;
-            margin-left: 1.5rem;
+            list-style-type: disc; 
+            margin-left: 1.5rem; 
         }
         .seccion-contenido a {
-            color: #38bdf8;
-            text-decoration: underline;
+            color: #38bdf8; 
+            text-decoration: underline; 
         }
         .seccion-contenido a:hover {
-            color: #7dd3fc;
+            color: #7dd3fc; 
         }
     </style>
 </head>
-<body class="antialiased">
-
+<body class="antialiased"> 
+<div id="particles-js"></div>
+    
     <header class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-700">
+        
         <nav class="container mx-auto px-6 py-4">
+            
             <div class="flex items-center justify-between">
+                
                 <a href="index.html" class="text-2xl font-bold text-sky-400">Cloud¡</a>
+                
                 <a href="index.html#pricing" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Ver Planes</a>
+                
             </div>
         </nav>
     </header>
 
+    
     <main class="py-12 md:py-16">
+        
         <div class="container mx-auto px-6">
+            
             <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-xl seccion-contenido">
+                
                 <h1 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Política de Privacidad</h1>
+                
 
                 <p>En Cloud¡, respetamos su privacidad y nos comprometemos a proteger la información personal que comparte con nosotros. Esta Política de Privacidad describe cómo recopilamos, usamos, compartimos y protegemos su información personal cuando utiliza nuestros servicios de alojamiento web y subdominios personalizados (en adelante, "Servicios").</p>
 
@@ -126,18 +146,24 @@
                 <p>Si tiene alguna pregunta sobre esta Política de Privacidad, puede contactarnos en:</p>
                 <p>Cloud¡<br>
                 Correo electrónico: <a href="mailto:cloudi.dmarg@gmail.com">cloudi.dmarg@gmail.com</a><br>
-                Dirección: Calle Hipolito Yrigoyen61, Ciudad Carhue, CP 6430</p>
+                Dirección: Calle Hipolito Yrigoyen 61, Ciudad Carhue, CP 6430</p>
 
                 <p class="mt-8 text-sm">Fecha de última actualización: <span id="ultimaActualizacion"></span></p>
+                
             </div>
         </div>
     </main>
 
+    
     <footer class="bg-slate-900 border-t border-slate-700 py-8">
+        
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                
                 <p class="mb-4 md:mb-0">© <span id="anioActual"></span> Cloud¡. Todos los derechos reservados.</p>
+                
                 <div class="flex space-x-4 md:space-x-6">
+                    
                     <a href="aviso-legal.html" class="hover:text-sky-400 transition-colors">Aviso Legal</a>
                     <a href="terminos-condiciones.html" class="hover:text-sky-400 transition-colors">Términos y Condiciones</a>
                     <a href="politica-privacidad.html" class="hover:text-sky-400 transition-colors">Política de Privacidad</a>
@@ -145,14 +171,20 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.getElementById('anioActual').textContent = new Date().getFullYear();
-        document.getElementById('ultimaActualizacion').textContent = new Date().toLocaleDateString('es-ES', {
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="particle.js" defer></script>
+<script>
+    document.getElementById('anioActual').textContent = new Date().getFullYear();
+    const fechaDeMiUltimaActualizacion = '2025-06-16';
+    const fechaFormateada = new Date(fechaDeMiUltimaActualizacion + 'T00:00:00')
+        .toLocaleDateString('es-ES', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
-    </script>
+    document.getElementById('ultimaActualizacion').textContent = fechaFormateada;
+</script>
 
 </body>
 </html>
