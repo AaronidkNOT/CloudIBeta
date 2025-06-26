@@ -62,13 +62,35 @@ body {
                 filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 
+
+
+/* ... (otros estilos) ... */
+
+#menu-movil {
+    /* Clases de Tailwind como md:hidden, mt-4, space-y-2 ya están en el HTML */
+    
+    /* Añade un color de fondo al menú. Usamos una variable CSS para que se adapte al tema. */
+    background-color: var(--fondo-secundario); 
+    border-radius: 0.375rem; /* Opcional: para que las esquinas coincidan con otros elementos */
+
+    /* Estado inicial: Completamente colapsado, transparente y contenido oculto */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden; /* MUY IMPORTANTE: para que el contenido no se muestre cuando max-height es 0 */
+
+    transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#menu-movil.menu-movil-abierto {
+    opacity: 1;
+    max-height: 50vh; 
+
 .logo-con-tema {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
     color: var(--texto-enlace);
-}
-
+}}
 .enlace-navegacion-con-tema {
     color: var(--texto-primario);
     transition: color 0.15s ease-in-out;
@@ -199,6 +221,15 @@ body {
     padding: 2rem;
     border-radius: 0.75rem;
     box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    transition: border-color 0.4s ease-in-out, transform 0.3s ease;
+}
+
+.tarjeta-caracteristica:hover {
+    border-color: #0284c7;
+    transform: scale(1.02);
 }
 
 .contenedor-icono-caracteristica {
@@ -348,7 +379,6 @@ body {
     border-radius: 0.5rem;
     text-align: center;
 }
-.boton-llamada-accion-popular-con-tema:hover { background-color: #f8fafc; }
 
 .fondo-pie-pagina-con-tema {
     background-color: rgba(15, 23, 42, 0.8);
@@ -367,7 +397,6 @@ body {
         justify-content: space-between;
     }
 }
-.texto-pie-pagina-con-tema { color: var(--texto-secundario); }
 
 .enlaces-pie-pagina {
     display: flex;
@@ -377,20 +406,6 @@ body {
 .enlace-texto-pie-pagina-con-tema { transition: color 0.15s ease-in-out; }
 .enlace-texto-pie-pagina-con-tema:hover { color: var(--texto-enlace) !important; }
 
-.boton-interruptor-tema {
-    color: var(--texto-secundario);
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    padding: 0.625rem;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-}
-.boton-interruptor-tema:hover { background-color: var(--fondo-acento); }
-.boton-interruptor-tema:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--fondo-acento);
-}
 
 .seccion-contenido {
     background-color: var(--fondo-papel);

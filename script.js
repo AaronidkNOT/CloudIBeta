@@ -7,14 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const enlacesNavegacionMovil = menuMovil.querySelectorAll('a');
 
         botonMenuMovil.addEventListener('click', function () {
-            menuMovil.classList.toggle('hidden');
+            // ANTES: menuMovil.classList.toggle('hidden');
+            menuMovil.classList.toggle('menu-movil-abierto'); // <--- CAMBIO AQUÍ
 
             const estaExpandido = botonMenuMovil.getAttribute('aria-expanded') === 'true' || false;
             botonMenuMovil.setAttribute('aria-expanded', !estaExpandido);
 
-            const rutaIcono = menuMovil.classList.contains('hidden')
-                ? "M4 6h16M4 12h16m-7 6h7"
-                : "M6 18L18 6M6 6l12 12";
+            // La condición para el ícono ahora se basa en la nueva clase
+            const rutaIcono = menuMovil.classList.contains('menu-movil-abierto') // <--- CAMBIO AQUÍ
+                ? "M6 18L18 6M6 6l12 12" // Ícono X (abierto)
+                : "M4 6h16M4 12h16m-7 6h7"; // Ícono Hamburguesa (cerrado)
             const iconoSVG = botonMenuMovil.querySelector('svg path');
             if (iconoSVG) {
                 iconoSVG.setAttribute('d', rutaIcono);
@@ -23,15 +25,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         enlacesNavegacionMovil.forEach(enlace => {
             enlace.addEventListener('click', () => {
-                menuMovil.classList.add('hidden');
+                // ANTES: menuMovil.classList.add('hidden');
+                menuMovil.classList.remove('menu-movil-abierto'); // <--- CAMBIO AQUÍ
+                
                 const iconoSVG = botonMenuMovil.querySelector('svg path');
                 if (iconoSVG) {
-                    iconoSVG.setAttribute('d', "M4 6h16M4 12h16m-7 6h7");
+                    iconoSVG.setAttribute('d', "M4 6h16M4 12h16m-7 6h7"); // Reset a hamburguesa
                 }
                 botonMenuMovil.setAttribute('aria-expanded', 'false');
             });
         });
     }
+});
 
     const spanAnioActual = document.getElementById('anioActual');
     if (spanAnioActual) {
@@ -113,4 +118,3 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-});
