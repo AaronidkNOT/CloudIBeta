@@ -65,14 +65,14 @@
     </div>
 </main>
 
-    <footer class="bg-slate-900 border-t border-slate-700 py-8 fondo-pie-pagina-con-tema">
+    <footer class="fondo-pie-pagina-con-tema">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400 texto-pie-pagina-con-tema">
-                <p class="mb-4 md:mb-0">© <span id="anioActual"></span> Cloud¡. Todos los derechos reservados.</p>
-                <div class="flex space-x-4 md:space-x-6">
-                    <a href="aviso-legal.html" class="hover:text-sky-400 transition-colors enlace-texto-pie-pagina-con-tema">Aviso Legal</a>
-                    <a href="terminos-condiciones.html" class="hover:text-sky-400 transition-colors enlace-texto-pie-pagina-con-tema">Términos y Condiciones</a>
-                    <a href="politica-privacidad.html" class="hover:text-sky-400 transition-colors enlace-texto-pie-pagina-con-tema">Política de Privacidad</a>
+            <div class="contenido-pie-pagina texto-pie-pagina-con-tema">
+                <p class="mb-4 md:mb-0">© <span id="anioActual"></span> Cloud!. Todos los derechos reservados.</p>
+                <div class="enlaces-pie-pagina">
+                    <a href="aviso-legal.html" class="enlace-texto-pie-pagina-con-tema">Aviso Legal</a>
+                    <a href="terminos-condiciones.html" class="enlace-texto-pie-pagina-con-tema">Términos y Condiciones</a>
+                    <a href="politica-privacidad.html" class="enlace-texto-pie-pagina-con-tema">Política de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
         const contadorCaracteresMensajeEl = document.getElementById('contador-caracteres-mensaje');
         const MAX_CARACTERES_MENSAJE = 1000;
 
-        // *** NUEVO: Obtener referencia al div del mensaje inline ***
+        // *** Obtener referencia al div del mensaje inline ***
         const elMensajeConfirmacionInline = document.getElementById('mensaje-confirmacion-inline');
 
         function actualizarVisibilidadContador() {
@@ -142,10 +142,9 @@
             elFormulario.addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                // *** NUEVO: Ocultar mensaje de confirmación/error previo si estuviera visible ***
                 if (elMensajeConfirmacionInline) {
                     elMensajeConfirmacionInline.classList.add('hidden');
-                    elMensajeConfirmacionInline.innerHTML = ''; // Limpiar contenido previo
+                    elMensajeConfirmacionInline.innerHTML = '';
                 }
 
                 let formValido = true;
@@ -168,31 +167,28 @@
                     if (elMensajeConfirmacionInline) {
                         elMensajeConfirmacionInline.innerHTML = '<span class="font-medium">Error:</span> Por favor, completa todos los campos requeridos correctamente.';
                         elMensajeConfirmacionInline.classList.remove('hidden');
-                        // Cambiar clases para estilo de error
                         elMensajeConfirmacionInline.classList.remove('text-green-700', 'bg-green-100', 'dark:text-green-400', 'border-green-500');
-                        elMensajeConfirmacionInline.classList.add('text-red-700', 'bg-red-100', 'dark:text-red-400', 'border-red-500', 'dark:bg-slate-700'); // Asegura dark mode si es necesario
+                        elMensajeConfirmacionInline.classList.add('text-red-700', 'bg-red-100', 'dark:text-red-400', 'border-red-500', 'dark:bg-slate-700');
                     } else {
                         alert('Por favor, completa todos los campos requeridos correctamente.'); // Fallback
                     }
                     return;
                 }
 
-                // *** MODIFICADO: Mostrar mensaje de éxito inline ***
                 if (elMensajeConfirmacionInline) {
                     elMensajeConfirmacionInline.innerHTML = '<span class="font-medium">¡Gracias por tu consulta!</span> Nos pondremos en contacto contigo pronto.';
                     elMensajeConfirmacionInline.classList.remove('hidden');
-                    // Asegurar clases de éxito
                     elMensajeConfirmacionInline.classList.remove('text-red-700', 'bg-red-100', 'dark:text-red-400', 'border-red-500');
-                    elMensajeConfirmacionInline.classList.add('text-green-700', 'bg-green-100', 'dark:text-green-400', 'border-green-500', 'dark:bg-slate-700'); // Asegura dark mode si es necesario
+                    elMensajeConfirmacionInline.classList.add('text-green-700', 'bg-green-100', 'dark:text-green-400', 'border-green-500', 'dark:bg-slate-700');
                 } else {
-                    alert('¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.'); // Fallback
+                    alert('¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.');
                 }
 
                 elFormulario.reset();
                 elFormulario.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
                 resetearContadorMensaje();
 
-                // *** NUEVO: Opcional - Ocultar el mensaje de confirmación después de unos segundos ***
+                // *** Opcional - Ocultar el mensaje de confirmación después de unos segundos ***
                 setTimeout(() => {
                     if (elMensajeConfirmacionInline) {
                         elMensajeConfirmacionInline.classList.add('hidden');
