@@ -84,13 +84,13 @@ body {
 #menu-movil.menu-movil-abierto {
     opacity: 1;
     max-height: 50vh; 
-
+}
 .logo-con-tema {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
     color: var(--texto-enlace);
-}}
+}
 .enlace-navegacion-con-tema {
     color: var(--texto-primario);
     transition: color 0.15s ease-in-out;
