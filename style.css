@@ -237,7 +237,6 @@ body {
     padding-right: 0.25rem;
     border-radius: 0.25rem;
     color: var(--texto-enlace);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .tarjeta-precios {
@@ -285,21 +284,9 @@ body {
 }
 .tarjeta-precios-popular .nombre-tarjeta-precios { color: white !important; }
 
-.precio-tarjeta-precios {
-    color: var(--texto-enlace);
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-}
-.tarjeta-precios-popular .precio-tarjeta-precios { color: white !important; }
+.tarjeta-precios-popular { color: white !important; }
 
-.unidad-precio-tarjeta-precios {
-    font-size: 1.125rem;
-    color: var(--texto-secundario);
-    font-weight: 400;
-}
-.tarjeta-precios-popular .unidad-precio-tarjeta-precios { color: var(--cielo-100) !important; }
+.tarjeta-precios-popular { color: var(--cielo-100) !important; }
 
 .descripcion-tarjeta-precios {
     color: var(--texto-secundario);
@@ -418,3 +405,20 @@ body {
 .seccion-contenido p, .seccion-contenido ul { color: var(--texto-secundario); }
 .seccion-contenido a { color: var(--texto-enlace); }
 .seccion-contenido a:hover { filter: brightness(1.2); }
+
+input[type="checkbox"]{
+display: none;
+}
+
+.Contenido{
+margin-top: 15px;
+max-height: 0;
+opacity: 0;
+overflow: hidden;
+transition: max-height 1.5s ease, 
+opacity 1.5s ease
+}
+input[type="checkbox"]:checked ~ .Contenido {
+max-height: 1600px;
+    opacity: 1;
+}

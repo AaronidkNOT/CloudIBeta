@@ -20,7 +20,7 @@
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#seccion-principal" class="enlace-navegacion-con-tema">Inicio</a>
                 <a href="#caracteristicas" class="enlace-navegacion-con-tema">Características</a>
-                <a href="#precios" class="enlace-navegacion-con-tema">Precios</a>
+                <a href="#precios" class="enlace-navegacion-con-tema">Planes</a>
                 <a href="mapa.html" class="enlace-navegacion-con-tema">Ver Mapa</a>
                 <a href="checkout.html?action=contact" class="boton boton-primario">Contáctanos</a>
             </div>
@@ -35,7 +35,7 @@
         <div id="menu-movil" class="hidden md:hidden mt-4 space-y-2">
             <a href="#seccion-principal" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Inicio</a>
             <a href="#caracteristicas" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Características</a>
-            <a href="#precios" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Precios</a>
+            <a href="#precios" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Planes</a>
             <a href="mapa.html" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Ver Mapa</a>
             <a href="checkout.html?accion=contact" class="boton boton-primario boton-bloque-movil">Contáctanos</a>
         </div>
@@ -57,43 +57,71 @@
             </div>
         </section>
 
-        <section id="caracteristicas" class="seccion-con-relleno bg-[rgba(30,41,59,0.6)]">
-            <div class="container mx-auto px-6">
-                <h2 class="titulo-seccion elemento-animado">Características Destacadas</h2>
-                <p class="subtitulo-seccion elemento-animado retraso-100ms">
-                    Todo lo que necesitás para lanzar y escalar tu presencia online con Cloud¡
-                </p>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="tarjeta-caracteristica elemento-animado retraso-200ms">
-                        <div class="contenedor-icono-caracteristica">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                            </svg>
-                        </div>
-                        <h3 class="titulo-tarjeta-caracteristica">Hosting en la Nube</h3>
-                        <p class="texto-tarjeta-caracteristica">Infraestructura robusta y escalable para un rendimiento óptimo y alta disponibilidad.</p>
-                    </div>
-                    <div class="tarjeta-caracteristica elemento-animado retraso-300ms">
-                        <div class="contenedor-icono-caracteristica">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                            </svg>
-                        </div>
-                        <h3 class="titulo-tarjeta-caracteristica">Subdominios Personalizados</h3>
-                        <p class="texto-tarjeta-caracteristica">Creá subdominios ilimitados (ej: <code class="codigo-resaltado">tuproyecto.Cloud¡.com</code>) fácilmente para tener tu sitio web.</p>
-                    </div>
-                    <div class="tarjeta-caracteristica elemento-animado retraso-400ms">
-                        <div class="contenedor-icono-caracteristica">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h3 class="titulo-tarjeta-caracteristica">Seguridad Avanzada</h3>
-                        <p class="texto-tarjeta-caracteristica">Protección DDoS, SSL gratuito y copias de seguridad automáticas para tu tranquilidad.</p>
-                    </div>
+<section id="caracteristicas" class="seccion-con-relleno bg-[rgba(30,41,59,0.6)]">
+    <div class="container mx-auto px-6">
+        <h2 class="titulo-seccion elemento-animado">Características Destacadas</h2>
+        <p class="subtitulo-seccion elemento-animado retraso-100ms">
+            Todo lo que necesitás para lanzar y escalar tu presencia online con Cloud¡
+        </p>
+        <!-- AÑADIR 'items-start' AQUÍ -->
+        <div class="grid md:grid-cols-3 gap-8 items-start">
+            <div class="tarjeta-caracteristica elemento-animado retraso-200ms">
+                <div class="contenedor-icono-caracteristica">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                </div>
+                <h3 class="titulo-tarjeta-caracteristica">Hosting en la Nube</h3>
+                <p class="texto-tarjeta-caracteristica">Infraestructura robusta y escalable para un rendimiento óptimo y alta disponibilidad.</p>
+                
+                <label for="host">
+                <p class="texto-tarjeta-caracteristica codigo-resaltado"style="margin-top: 15px;">Mas informacion</p></label>
+                <input type="checkbox" id="host">
+                <div class="Contenido">
+                <strong>Hosting en la Nube</strong>
+                El hosting en la nube es donde vive tu sitio web. En vez de estar en una sola computadora (como en el <code class="codigo-resaltado">hosting tradicional</code>), tu web se guarda y funciona desde varios servidores conectados entre sí.
+                Esto hace que tu sitio en <code class="codigo-resaltado">CloudI.com</code> sea más rápido, siempre esté disponible (aunque haya muchos visitantes) y pueda crecer sin problemas cuando lo necesites.
                 </div>
             </div>
-        </section>
+            <div class="tarjeta-caracteristica elemento-animado retraso-300ms">
+                <div class="contenedor-icono-caracteristica">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                </div>
+                <h3 class="titulo-tarjeta-caracteristica">Subdominios Personalizados</h3>
+                <p class="texto-tarjeta-caracteristica">Creá subdominios (ej: <code class="codigo-resaltado">tuproyecto.Cloud¡.com</code>) fácilmente para tener tu sitio web.</p>
+                <label for="subdominio">
+                <p class="texto-tarjeta-caracteristica codigo-resaltado"style="margin-top: 15px;">Mas informacion</p></label>
+                <input type="checkbox" id="subdominio">
+                <div class="Contenido">
+                <strong>¿Qué es un subdominio?</strong>
+                Un subdominio es como una extensión personalizada de mi sitio web principal,  <code class="codigo-resaltado">CloudI.com</code>. Por ejemplo, podés crear tu propio espacio con una dirección como <code class="codigo-resaltado">tuproyecto.Cloud¡.com</code>.
+                Esto te permite tener tu sitio web sin necesidad de comprar un dominio propio. Es rápido, simple y lo configurás en minutos.
+                </div>
+            </div>
+            <div class="tarjeta-caracteristica elemento-animado retraso-400ms">
+                <div class="contenedor-icono-caracteristica">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icono-caracteristica" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="titulo-tarjeta-caracteristica">Seguridad Avanzada</h3>
+                <p class="texto-tarjeta-caracteristica">Protección DDoS, SSL gratuito y copias de seguridad automáticas para tu tranquilidad.</p>
+                
+                <label for="seguridad">
+                <p class="texto-tarjeta-caracteristica codigo-resaltado"style="margin-top: 15px;">Mas informacion</p></label>
+                <input type="checkbox" id="seguridad">
+                <div class="Contenido">
+                <strong>Seguridad Avanzada</strong>
+                Nos tomamos la seguridad en serio. Tu sitio en <code class="codigo-resaltado">CloudI.com</code> cuenta con protección contra ataques (DDoS), 
+                conexión segura con certificado SSL (el famoso candadito 🔒) y copias de seguridad automáticas. Así, 
+                tus datos y los de tus visitantes están siempre cuidados, sin que tengas que hacer <code class="codigo-resaltado">nada</code>.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section id="precios" class="seccion-con-relleno">
             <div class="container mx-auto px-6">
@@ -104,44 +132,41 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="tarjeta-precios elemento-animado retraso-200ms">
                         <h3 class="nombre-tarjeta-precios">Básico</h3>
-                        <p class="precio-tarjeta-precios">$9.000<span class="unidad-precio-tarjeta-precios">/mes</span></p>
                         <p class="descripcion-tarjeta-precios">Ideal para proyectos personales</p>
                         <ul class="caracteristicas-tarjeta-precios">
                             <li class="elemento-caracteristica-tarjeta-precios">1 sitio web</li>
-                            <li class="elemento-caracteristica-tarjeta-precios">Mantenimiento gratuito por 2 meses</li>
+                            <li class="elemento-caracteristica-tarjeta-precios">Mantenimiento gratuito por 1 meses</li>
                             <li class="elemento-caracteristica-tarjeta-precios">Subdominio unico</li>
                             <li class="elemento-caracteristica-tarjeta-precios">SSL Gratuito</li>
                         </ul>
-                        <a href="checkout.html?plan=basico" class="boton boton-llamada-accion-con-tema">Comenzar ahora</a>
+                        <a href="checkout.html?plan=empresarial" class="boton boton-llamada-accion-con-tema">Comenzar ahora</a>
                     </div>
 
                     <div class="tarjeta-precios tarjeta-precios-popular elemento-animado retraso-300ms">
                         <span class="distintivo-popular-tarjeta-precios">Más Popular</span>
                         <h3 class="nombre-tarjeta-precios">Estandar</h3>
-                        <p class="precio-tarjeta-precios precio-tarjeta-precios-popular">$15.000<span class="unidad-precio-tarjeta-precios unidad-precio-tarjeta-precios-popular">/mes</span></p>
                         <p class="descripcion-tarjeta-precios descripcion-tarjeta-precios-popular">Perfecto para emprendedores y negocios en crecimiento.</p>
                         <ul class="caracteristicas-tarjeta-precios caracteristicas-tarjeta-precios-popular">
-                            <li class="elemento-caracteristica-tarjeta-precios">2 sitios web</li>
-                            <li class="elemento-caracteristica-tarjeta-precios">Matenimiento gratuito por 6 meses</li>
-                            <li class="elemento-caracteristica-tarjeta-precios">Subdominios personalizados</li>
+                            <li class="elemento-caracteristica-tarjeta-precios">2 sitio web</li>
+                            <li class="elemento-caracteristica-tarjeta-precios">Matenimiento gratuito por 3 meses</li>
+                            <li class="elemento-caracteristica-tarjeta-precios">Subdominio personalizado</li>
                             <li class="elemento-caracteristica-tarjeta-precios">SSL gratuito y CDN</li>
                             <li class="elemento-caracteristica-tarjeta-precios">Soporte prioritario</li>
                         </ul>
-                        <a href="checkout.html?plan=pro" class="boton boton-llamada-accion-popular-con-tema">Elegir plan pro</a>
+                        <a href="checkout.html?plan=empresarial" class="boton boton-llamada-accion-popular-con-tema">Elegir plan pro</a>
                     </div>
 
                     <div class="tarjeta-precios elemento-animado retraso-400ms">
                         <h3 class="nombre-tarjeta-precios">Profesional</h3>
-                        <p class="precio-tarjeta-precios">$35.000<span class="unidad-precio-tarjeta-precios">/mes</span></p>
                         <p class="descripcion-tarjeta-precios">Para web de alto tráfico y procesamiento.</p>
                         <ul class="caracteristicas-tarjeta-precios">
-                            <li class="elemento-caracteristica-tarjeta-precios">5 sitios web</li>
-                            <li class="elemento-caracteristica-tarjeta-precios">Matenimiento gratuito</li>
+                            <li class="elemento-caracteristica-tarjeta-precios">3 sitios web</li>
+                            <li class="elemento-caracteristica-tarjeta-precios">Matenimiento gratuito por 6 meses</li>
                             <li class="elemento-caracteristica-tarjeta-precios">Subdominios Personalizables</li>
                             <li class="elemento-caracteristica-tarjeta-precios">Seguridad Premium</li>
                             <li class="elemento-caracteristica-tarjeta-precios">Soporte Dedicado 24/7</li>
                         </ul>
-                        <a href="checkout.html?plan=empresarial" class="boton boton-llamada-accion-con-tema">Contactar Ventas</a>
+                        <a href="checkout.html?plan=empresarial" class="boton boton-llamada-accion-con-tema">Contactenos</a>
                     </div>
                 </div>
             </div>
@@ -154,11 +179,10 @@
                     Contactanos hoy mismo para discutir tus necesidades o elegí un plan y comenzá a construir.
                 </p>
                 <a href="checkout.html?action=contact" class="boton boton-llamada-accion-principal elemento-animado retraso-200ms">
-                    Contactar por Email
+                    Contactar por Email o WhatsApp
                 </a>
             </div>
         </section>
-
     </main>
 
     <footer class="fondo-pie-pagina-con-tema py-8">
