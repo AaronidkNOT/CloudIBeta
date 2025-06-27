@@ -83,29 +83,6 @@ body {
     }
 }
 
-.loader {
-    width: 60px;
-    height: 60px;
-    border: 5px solid rgba(224, 224, 224, 0.2);
-    border-top-color: #ff8a00;
-    border-radius: 50%;
-    animation: spinLoader 1s linear infinite;
-    margin: 0 auto;
-    opacity: 0;
-    animation: fadeInLoader 1s ease-out 1s forwards, spinLoader 1s linear 1s infinite;
-}
-
-@keyframes spinLoader {
-    to {
-        transform: rotate(360deg);
-    }
-}
-@keyframes fadeInLoader {
-    to {
-        opacity: 1;
-    }
-}
-
 .map-preview-container {
     position: absolute;
     bottom: 20px;
