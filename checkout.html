@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex flex-col min-h-screen antialiased">
-<div id="particles-js"></div>
+<body class="flex flex-col min-h-screen">
+<div id="particles-js" class="absolute top-0 left-0 w-full h-full -z-10"></div>
     <header id="encabezado" class="barra-navegacion-fija transition-all duration-300">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
@@ -29,27 +29,32 @@
 
             <h1 id="titulo-checkout" class="text-3xl md:text-4xl font-bold text-white mb-8 text-center texto-primario-con-tema">Contacta con Nosotros por Gmail</h1>
 
-            <form id="formulario-checkout" class="space-y-6">
-                <div>
-                    <label for="nombreCompleto" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Tu Nombre</label>
-                    <input type="text" id="nombreCompleto" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="Juan Pérez" required>
-                </div>
-                <div>
-                    <label for="correoElectronico" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Correo Electrónico</label>
-                    <input type="email" id="correoElectronico" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="juan.perez@ejemplo.com" required>
-                </div>
-                <div id="seccion-contacto">
-                    <label for="mensaje" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Tu Mensaje</label>
-                    <textarea id="mensaje" rows="4" maxlength="1000" class="block p-2.5 w-full text-sm text-slate-200 bg-slate-700 rounded-lg border border-slate-600 focus:ring-sky-500 focus:border-sky-500 entrada-con-tema" placeholder="Escribe tu consulta aquí..." required></textarea>
-                    <div id="contador-caracteres-mensaje" class="text-xs text-slate-400 mt-1">0/1000 caracteres</div>
-                </div>
-                <div id="mensaje-confirmacion-inline" class="hidden mt-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-slate-700 dark:text-green-400 border border-green-500" role="alert">
-                    <!-- El mensaje se insertará aquí -->
-                </div>
-                <button type="submit" id="boton-enviar-formulario" class="w-full text-white bg-sky-500 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-3 text-center transition-colors">
-                    Enviar Consulta
-                </button>
-            </form>
+            <form id="formulario-checkout" action="https://formsubmit.co/cloudi.dmarg@gmail.com" method="POST" class="space-y-6">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none"> <!-- Anti-spam -->
+
+    <div>
+        <label for="nombreCompleto" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Tu Nombre</label>
+        <input type="text" id="nombreCompleto" name="nombre" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="Juan Pérez" required>
+    </div>
+    <div>
+        <label for="correoElectronico" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Correo Electrónico</label>
+        <input type="email" id="correoElectronico" name="email" class="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 entrada-con-tema" placeholder="juan.perez@ejemplo.com" required>
+    </div>
+    <div id="seccion-contacto">
+        <label for="mensaje" class="block mb-2 text-sm font-medium text-slate-300 texto-secundario-con-tema">Tu Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" maxlength="1000" class="block p-2.5 w-full text-sm text-slate-200 bg-slate-700 rounded-lg border border-slate-600 focus:ring-sky-500 focus:border-sky-500 entrada-con-tema" placeholder="Escribe tu consulta aquí..." required></textarea>
+        <div id="contador-caracteres-mensaje" class="text-xs text-slate-400 mt-1">0/1000 caracteres</div>
+    </div>
+    <div id="mensaje-confirmacion-inline" class="hidden mt-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-slate-700 dark:text-green-400 border border-green-500" role="alert">
+        <!-- El mensaje se insertará aquí -->
+    </div>
+    <button type="submit" id="boton-enviar-formulario" class="w-full text-white bg-sky-500 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-3 text-center transition-colors">
+        Enviar Consulta
+    </button>
+</form>
+
         </div>
     </div>
     <div class="container mx-auto px-6 mt-8">
@@ -60,12 +65,13 @@
             <div class="text-center">
                 <a href="https://wa.me/5492923541222?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="inline-block">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/100px-WhatsApp.svg.png" alt="Contactar por WhatsApp" style="width:60px; height:auto; vertical-align: middle;">
-            </div>
+                </a>
+                </div>
         </div>
     </div>
 </main>
 
-    <footer class="fondo-pie-pagina-con-tema">
+    <footer class="fondo-pie-pagina-con-tema py-6">
         <div class="container mx-auto px-6">
             <div class="contenido-pie-pagina texto-pie-pagina-con-tema">
                 <p class="mb-4 md:mb-0">© <span id="anioActual"></span> Cloud!. Todos los derechos reservados.</p>
@@ -78,7 +84,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="particle.js" defer></script>\
+    <script src="particle.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const elDetallesPlan = document.getElementById('detalles-plan');
