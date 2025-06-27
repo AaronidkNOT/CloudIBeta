@@ -144,65 +144,60 @@
 
 
         // Lógica de validación y envío del formulario
-        if(elFormulario && !elFormulario.classList.contains('hidden')) {
-            elFormulario.addEventListener('submit', (e) => {
-                e.preventDefault();
+        // --- Reemplaza tu bloque de código 'elFormulario.addEventListener' por este ---
 
-                if (elMensajeConfirmacionInline) {
-                    elMensajeConfirmacionInline.classList.add('hidden');
-                    elMensajeConfirmacionInline.innerHTML = '';
-                }
+if (elFormulario && !elFormulario.classList.contains('hidden')) {
+    elFormulario.addEventListener('submit', (e) => {
+        // 1. Prevenimos el comportamiento por defecto del formulario (que es recargar la página)
+        e.preventDefault();
 
-                let formValido = true;
-                elFormulario.querySelectorAll('input[required], textarea[required]').forEach(input => {
-                    let isVisibleAndRequired = input.required;
-                    const fieldContainer = input.closest('#seccion-contacto, div:not(#seccion-contacto)');
-                    if (fieldContainer && fieldContainer.id === 'seccion-contacto' && elSeccionContacto.classList.contains('hidden')) {
-                        isVisibleAndRequired = false;
-                    }
-                    if (isVisibleAndRequired && !input.value.trim()) {
-                        formValido = false;
-                        input.classList.add('border-red-500');
-                    } else {
-                        input.classList.remove('border-red-500');
-                    }
-                });
+        // 2. Creamos un objeto FormData para capturar todos los datos del formulario
+        const formData = new FormData(elFormulario);
+        const elBotonEnviarFormulario = document.getElementById('boton-enviar-formulario');
+        const elMensajeConfirmacionInline = document.getElementById('mensaje-confirmacion-inline');
 
-                if (!formValido) {
-                    // *** NUEVO: Mostrar error de validación inline ***
-                    if (elMensajeConfirmacionInline) {
-                        elMensajeConfirmacionInline.innerHTML = '<span class="font-medium">Error:</span> Por favor, completa todos los campos requeridos correctamente.';
-                        elMensajeConfirmacionInline.classList.remove('hidden');
-                        elMensajeConfirmacionInline.classList.remove('text-green-700', 'bg-green-100', 'dark:text-green-400', 'border-green-500');
-                        elMensajeConfirmacionInline.classList.add('text-red-700', 'bg-red-100', 'dark:text-red-400', 'border-red-500', 'dark:bg-slate-700');
-                    } else {
-                        alert('Por favor, completa todos los campos requeridos correctamente.'); // Fallback
-                    }
-                    return;
-                }
+        // 3. Mostramos un estado de "cargando" para que el usuario sepa que algo está pasando
+        elBotonEnviarFormulario.disabled = true;
+        elBotonEnviarFormulario.textContent = 'Enviando...';
+        elMensajeConfirmacionInline.classList.add('hidden'); // Ocultar mensajes anteriores
 
-                if (elMensajeConfirmacionInline) {
-                    elMensajeConfirmacionInline.innerHTML = '<span class="font-medium">¡Gracias por tu consulta!</span> Nos pondremos en contacto contigo pronto.';
-                    elMensajeConfirmacionInline.classList.remove('hidden');
-                    elMensajeConfirmacionInline.classList.remove('text-red-700', 'bg-red-100', 'dark:text-red-400', 'border-red-500');
-                    elMensajeConfirmacionInline.classList.add('text-green-700', 'bg-green-100', 'dark:text-green-400', 'border-green-500', 'dark:bg-slate-700');
-                } else {
-                    alert('¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.');
-                }
-
-                elFormulario.reset();
-                elFormulario.querySelectorAll('.border-red-500').forEach(el => el.classList.remove('border-red-500'));
-                resetearContadorMensaje();
-
-                // *** Opcional - Ocultar el mensaje de confirmación después de unos segundos ***
-                setTimeout(() => {
-                    if (elMensajeConfirmacionInline) {
-                        elMensajeConfirmacionInline.classList.add('hidden');
-                        elMensajeConfirmacionInline.innerHTML = ''; // Limpiar para la próxima vez
-                    }
-                }, 7000); // 7000 milisegundos = 7 segundos
-            });
-        }
+        // 4. Usamos fetch para enviar los datos a FormSubmit de forma asíncrona
+        fetch(elFormulario.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json' // Importante para que FormSubmit devuelva una respuesta JSON
+            },
+        })
+        .then(response => {
+            // 5. Analizamos la respuesta del servidor
+            if (response.ok) {
+                // Si el envío fue exitoso (status 200-299)
+                elMensajeConfirmacionInline.innerHTML = '<span class="font-medium">¡Gracias por tu consulta!</span> Nos pondremos en contacto contigo pronto.';
+                elMensajeConfirmacionInline.className = 'mt-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-slate-700 dark:text-green-400 border border-green-500'; // Clases de éxito
+                elFormulario.reset(); // Limpiamos el formulario
+                resetearContadorMensaje(); // Reseteamos el contador de caracteres
+            } else {
+                // Si hubo un error en el servidor (ej: FormSubmit está caído)
+                // Usamos response.json() para intentar obtener el mensaje de error de FormSubmit
+                return response.json().then(data => {
+                    throw new Error(data.message || 'Error en el servidor.');
+                })
+            }
+        })
+        .catch(error => {
+            // 6. Si hay un error (de red, o el que lanzamos antes), mostramos un mensaje de error
+            elMensajeConfirmacionInline.innerHTML = `<span class="font-medium">Error:</span> ${error.message || 'No se pudo enviar el formulario. Revisa tu conexión a internet.'}`;
+            elMensajeConfirmacionInline.className = 'mt-4 p-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-slate-700 dark:text-red-400 border border-red-500'; // Clases de error
+            console.error('Error al enviar el formulario:', error);
+        })
+        .finally(() => {
+            // 7. Haya funcionado o no, volvemos a habilitar el botón
+            elBotonEnviarFormulario.disabled = false;
+            elBotonEnviarFormulario.textContent = 'Enviar Consulta';
+        });
+    });
+}
         actualizarVisibilidadContador();
 
         const anioActualEl = document.getElementById('anioActual');
