@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./dist/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://source.unsplash.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://aaronidknot.github.io/CloudI/index.html" />
+    <style>
+        body{color:#202020}
+    </style>
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <meta name="description" content="Desarrollamos tu presencia online con páginas web económicas. Incluimos subdominio y hosting para que puedas lanzar tu marca o proyecto sin preocuparte por los altos costos.">
 </head>
 <body class="antialiased">
     <div id="particles-js"></div>
@@ -18,14 +24,14 @@
         <div class="flex items-center justify-between">
             <a href="#" class="logo-con-tema">Cloud¡</a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#seccion-principal" class="enlace-navegacion-con-tema">Inicio</a>
                 <a href="#caracteristicas" class="enlace-navegacion-con-tema">Características</a>
                 <a href="#precios" class="enlace-navegacion-con-tema">Planes</a>
                 <a href="mapa.html" class="enlace-navegacion-con-tema">Ver Mapa</a>
+                <a href="quienesSomos.html" class="enlace-navegacion-con-tema">¿Quienes somos?</a>
                 <a href="checkout.html?action=contact" class="boton boton-primario">Contáctanos</a>
             </div>
             <div class="md:hidden flex items-center space-x-3">
-                <button id="boton-menu-movil" class="enlace-navegacion-con-tema activador-menu-movil">
+                <button id="boton-menu-movil" class="enlace-navegacion-con-tema activador-menu-movil" aria-label="Abrir menú de navegación">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -33,10 +39,10 @@
             </div>
         </div>
         <div id="menu-movil" class="md:hidden mt-4 space-y-2">
-            <a href="#seccion-principal" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Inicio</a>
             <a href="#caracteristicas" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Características</a>
             <a href="#precios" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Planes</a>
             <a href="mapa.html" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">Ver Mapa</a>
+            <a href="quienesSomos.html" class="enlace-navegacion-movil enlace-navegacion-con-tema enlace-navegacion-movil-con-tema">¿Quienes somos?</a>
             <a href="checkout.html?accion=contact" class="boton boton-primario boton-bloque-movil">Contáctanos</a>
         </div>
     </nav>
@@ -63,7 +69,6 @@
         <p class="subtitulo-seccion elemento-animado retraso-100ms">
             Todo lo que necesitás para lanzar y escalar tu presencia online con Cloud¡
         </p>
-        <!-- AÑADIR 'items-start' AQUÍ -->
         <div class="grid md:grid-cols-3 gap-8 items-start">
             <div class="tarjeta-caracteristica elemento-animado retraso-200ms">
                 <div class="contenedor-icono-caracteristica">
@@ -75,7 +80,7 @@
                 <p class="texto-tarjeta-caracteristica">Infraestructura robusta y escalable para un rendimiento óptimo y alta disponibilidad.</p>
                 
                 <label for="host">
-                <p class="texto-tarjeta-caracteristica codigo-resaltado"style="margin-top: 15px;">Más información</p></label>
+                <p class="texto-tarjeta-caracteristica codigo-resaltado" style="margin-top: 15px;">Más información</p></label>
                 <input type="checkbox" id="host">
                 <div class="Contenido">
                 <strong>Hosting en la Nube</strong>
@@ -92,7 +97,7 @@
                 <h3 class="titulo-tarjeta-caracteristica">Subdominios Personalizados</h3>
                 <p class="texto-tarjeta-caracteristica">Creá subdominios (ej: <code class="codigo-resaltado">tuproyecto.Cloud¡.com</code>) fácilmente para tener tu sitio web.</p>
                 <label for="subdominio">
-                <p class="texto-tarjeta-caracteristica codigo-resaltado"style="margin-top: 15px;">Más información</p></label>
+                <p class="texto-tarjeta-caracteristica codigo-resaltado" style="margin-top: 15px;">Más información</p></label>
                 <input type="checkbox" id="subdominio">
                 <div class="Contenido">
                 <strong>¿Qué es un subdominio?</strong>
@@ -110,7 +115,7 @@
                 <p class="texto-tarjeta-caracteristica">Protección DDoS, SSL gratuito y copias de seguridad automáticas para tu tranquilidad.</p>
                 
                 <label for="seguridad">
-                <p class="texto-tarjeta-caracteristica codigo-resaltado"style="margin-top: 15px;">Más información</p></label>
+                <p class="texto-tarjeta-caracteristica codigo-resaltado" style="margin-top: 15px">Más información</p></label>
                 <input type="checkbox" id="seguridad">
                 <div class="Contenido">
                 <strong>Seguridad Avanzada</strong>
@@ -198,7 +203,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
     <script src="particle.js" defer></script>
     <script src="script.js" defer></script>
 
