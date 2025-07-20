@@ -409,7 +409,7 @@ body {
 .seccion-contenido h3 { color: var(--texto-primario); }
 .seccion-contenido p, .seccion-contenido ul { color: var(--texto-secundario); }
 .seccion-contenido a { color: var(--texto-enlace); }
-.seccion-contenido a:hover { filter: brightness(1.2); }
+.seccion-contenido a:hover { filter: brightness(1.2); }z
 
 input[type="checkbox"]{
 display: none;
