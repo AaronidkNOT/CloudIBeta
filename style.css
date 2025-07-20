@@ -121,7 +121,6 @@ body {
 
 .fondo-seccion-principal {
     background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)),
-                    url('https://source.unsplash.com/random/1600x900/?abstract,network,cloud');
 }
 
 .titulo-principal {
@@ -410,7 +409,7 @@ body {
 .seccion-contenido h3 { color: var(--texto-primario); }
 .seccion-contenido p, .seccion-contenido ul { color: var(--texto-secundario); }
 .seccion-contenido a { color: var(--texto-enlace); }
-.seccion-contenido a:hover { filter: brightness(1.2); }
+.seccion-contenido a:hover { filter: brightness(1.2); }z
 
 input[type="checkbox"]{
 display: none;
