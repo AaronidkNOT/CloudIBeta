@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
+    <link rel="apple-touch-icon" href="imagenes/favicon.png">
     <meta name="description" content="Leé los términos y condiciones de servicio de Cloud¡. Este documento detalla tus derechos y obligaciones al utilizar nuestros servicios de diseño y hosting web.">
     <meta http-equiv="Content-Security-Policy"
     content="default-src 'self';
-    script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+    script-src 'self' https://cdn.jsdelivr.net https://static.cloudflareinsights.com 'unsafe-inline';
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com;
     img-src 'self' data: https://upload.wikimedia.org https://images.icon-icons.com;
     connect-src 'self' https://formsubmit.co;">
-    <title>Términos y Condiciones - Cloud¡</title>
+    <title>Términos y Condiciones de Servicio | Uso de Plataforma Cloudi</title>
     <link href="dist/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://aaronidknot.github.io/CloudI/terminos-condiciones.html" />
+    <link rel="canonical" href="https://cloudi.com.ar/terminos-condiciones" />
     <style>
         #particles-js {
             position: fixed;
@@ -69,15 +71,15 @@
 <body class="antialiased"> 
 <div id="particles-js"></div>
     
-    <header class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-700">
+    <header id="encabezado" class="barra-navegacion-fija">
         
         <nav class="container mx-auto px-6 py-4">
             
             <div class="flex items-center justify-between">
                 
-                <a href="index.html" class="text-2xl font-bold text-sky-400">Cloud¡</a>
+                <a href="/" class="logo-con-tema">Cloud¡</a>
                 
-                <a href="index.html#pricing" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Ver Planes</a>
+                <a href="/#precios" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Ver Planes</a>
                 
             </div>
         </nav>
@@ -86,63 +88,88 @@
     
 <main class="py-12 md:py-16">
     <div class="container mx-auto px-6">
-        <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-xl seccion-contenido">
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Términos y Condiciones de Uso</h1>
+    <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-xl seccion-contenido">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Términos y Condiciones de Uso</h1>
 
-            <h2>1. ACEPTACIÓN DE LOS TÉRMINOS</h2>
-            <p>Bienvenido a Cloud¡ (en adelante, "el Servicio" o "nosotros"). Al acceder o utilizar nuestro servicio de alojamiento web y subdominios personalizados, usted (en adelante, "el Usuario" o "usted") acepta estar legalmente obligado por estos Términos y Condiciones de Uso ("Términos"). Si no está de acuerdo con alguno de estos términos, no debe utilizar el Servicio.</p>
-            <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento. Le notificaremos los cambios importantes publicando los nuevos Términos en esta página. Es su responsabilidad revisar estos Términos periódicamente.</p>
+        <h2>1. ACEPTACIÓN DE LOS TÉRMINOS</h2>
+        <p>Bienvenido a Cloudi S.R.L. (en adelante, "Cloudi", "el Servicio" o "nosotros"). Al acceder o utilizar cualquier parte de nuestro servicio de alojamiento web y subdominios personalizados, usted (en adelante, "el Usuario" o "usted") acepta estar legalmente obligado por estos Términos y Condiciones de Uso (en adelante, "Términos"). Estos Términos constituyen un acuerdo legal vinculante entre usted y Cloudi S.R.L. Si no está de acuerdo con la totalidad o parte de estos Términos, no debe utilizar el Servicio.</p>
+        <p>Nos reservamos el derecho de modificar o actualizar estos Términos en cualquier momento y a nuestra sola discreción. Las modificaciones entrarán en vigencia a partir de su publicación en esta página. En caso de cambios importantes, le notificaremos mediante un aviso destacado en el sitio web o a través de los medios de contacto que nos haya proporcionado. Es su responsabilidad revisar estos Términos periódicamente para estar al tanto de las actualizaciones. El uso continuado del Servicio después de la publicación de las modificaciones implicará su aceptación de los Términos revisados.</p>
 
-            <h2>2. DESCRIPCIÓN DEL SERVICIO</h2>
-            <p>Cloud¡ proporciona una plataforma de alojamiento de sitios web en la nube que permite a los usuarios desplegar sus proyectos y utilizar subdominios personalizados (ej: <code>suproyecto.Cloud¡.com</code>). Las características específicas de cada plan de servicio se detallan en nuestra sección de <a href="index.html#pricing">Precios</a>.</p>
+        <h2>2. DESCRIPCIÓN DEL SERVICIO</h2>
+        <p>Cloudi proporciona una plataforma de alojamiento en la nube que permite a los usuarios desplegar y alojar sus sitios web, aplicaciones web y proyectos digitales, así como utilizar subdominios personalizados bajo nuestro dominio principal (ej: <code>suproyecto.cloudi.com.ar</code>). Las características, limitaciones y especificaciones de cada plan de servicio (incluyendo espacio en disco, transferencia de datos, etc.) se detallan en nuestra sección de <a href="index.html#precios">Planes de Servicio</a>. Cloudi se reserva el derecho de modificar las características de los planes, así como de añadir o eliminar servicios.</p>
 
-            <h2>3. REGISTRO Y CUENTA DE USUARIO</h2>
-            <h3>3.1. Elegibilidad</h3>
-            <p>Debe tener al menos 18 años o la mayoría de edad legal en su jurisdicción para registrarse. Al hacerlo, declara que cumple con este requisito.</p>
-            <h3>3.2. Información de la Cuenta</h3>
-            <p>Debe proporcionar información precisa, actual y completa durante el registro y mantenerla actualizada.</p>
-            <h3>3.3. Seguridad de la Cuenta</h3>
-            <p>Usted es responsable de su contraseña y de toda actividad en su cuenta. Recomendamos usar contraseñas seguras (mezcla de letras, números y símbolos).</p>
+        <h2>3. REGISTRO Y CUENTA DE USUARIO</h2>
+        <h3>3.1. Elegibilidad</h3>
+        <p>Para registrarse y utilizar nuestros Servicios, el Usuario debe tener al menos dieciocho (18) años de edad o la mayoría de edad legal en su jurisdicción. Al registrarse, usted declara y garantiza que cumple con este requisito.</p>
+        <h3>3.2. Información de la Cuenta</h3>
+        <p>El Usuario se compromete a proporcionar información precisa, veraz, actual y completa durante el proceso de registro y a mantenerla actualizada en todo momento. Cloudi no se hace responsable por cualquier problema o perjuicio derivado de la información incorrecta o desactualizada proporcionada por el Usuario.</p>
+        <h3>3.3. Seguridad de la Cuenta</h3>
+        <p>Usted es el único responsable de mantener la confidencialidad de su contraseña y de todas las actividades que ocurran bajo su cuenta. Se recomienda encarecidamente utilizar contraseñas fuertes que combinen letras mayúsculas y minúsculas, números y símbolos. Debe notificarnos inmediatamente sobre cualquier uso no autorizado de su cuenta o cualquier otra violación de seguridad. Cloudi no será responsable por ninguna pérdida o daño que resulte de su incumplimiento de esta obligación de seguridad.</p>
 
-            <h2>4. USO ACEPTABLE</h2>
-            <p>El Usuario acepta no utilizar el Servicio para realizar ninguna de las siguientes actividades:</p>
-            <ul class="list-disc pl-6">
-                <li>Publicar contenido ilegal, ofensivo, abusivo o difamatorio.</li>
-                <li>Violar derechos de autor o propiedad intelectual.</li>
-                <li>Distribuir malware o software malicioso.</li>
-                <li>Realizar minería de criptomonedas sin autorización.</li>
-                <li>Enviar spam o abusar de la red.</li>
-                <li>Fingir identidad o afiliación falsa.</li>
-            </ul>
-            <p>Podemos suspender o cancelar cuentas que violen esta política.</p>
+        <h2>4. USO ACEPTABLE DEL SERVICIO Y CONDUCTA DEL USUARIO</h2>
+        <p>El Usuario se compromete a utilizar el Servicio de manera responsable y legal, de conformidad con estos Términos, la legislación argentina vigente, las buenas costumbres y el orden público. El Usuario acepta expresamente no utilizar el Servicio para realizar ninguna de las siguientes actividades o para alojar contenido que:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li>Sea ilegal, amenazante, difamatorio, obsceno, pornográfico, abusivo, acosador, fraudulento o que vulnere la privacidad de terceros.</li>
+            <li>Promueva o incite a la violencia, el odio, la discriminación racial, sexual, religiosa o de cualquier otro tipo.</li>
+            <li>Contenga material que sea considerado contenido de abuso sexual infantil (CSAM) o que promueva actividades terroristas.</li>
+            <li>Infrinja derechos de propiedad intelectual o industrial de terceros (incluyendo derechos de autor, marcas registradas, patentes y secretos comerciales).</li>
+            <li>Implique la distribución, transmisión o almacenamiento de malware, virus, troyanos, gusanos, bombas lógicas o cualquier otro software malicioso o dañino.</li>
+            <li>Consista en el envío de spam, correo masivo no solicitado (UCE), "phishing" o cualquier otra forma de abuso de la red o correo electrónico.</li>
+            <li>Realice minería de criptomonedas o actividades de uso intensivo de recursos (CPU, RAM, ancho de banda) que afecten negativamente el rendimiento del Servicio o de otros usuarios, sin previa autorización expresa de Cloudi.</li>
+            <li>Intente suplantar la identidad de otra persona o entidad, o tergiverse su afiliación con una persona o entidad.</li>
+            <li>Comprometa la seguridad de la red de Cloudi o de los sistemas de terceros, incluyendo intentos de acceso no autorizado, escaneo de puertos, pruebas de penetración o ataques de denegación de servicio (DoS/DDoS).</li>
+        </ul>
+        <p>Cloudi se reserva el derecho de investigar cualquier violación de esta Política de Uso Aceptable y de tomar las medidas que considere apropiadas, incluyendo, sin limitación, la remoción de contenido, la suspensión o cancelación inmediata de la cuenta del Usuario, sin previo aviso y sin derecho a reembolso, y la cooperación con las autoridades legales si fuera necesario.</p>
 
-            <h2>5. PLANES DE SERVICIO Y PAGOS</h2>
-            <h3>5.1. Tarifas</h3>
-            <p>Las tarifas están detalladas en la sección <a href="index.html#precios">Precios</a>. Podemos modificarlas con previo aviso.</p>
-            <h3>5.2. Facturación y Pago</h3>
-            <p>El pago se realiza por adelantado. En caso de impago, podemos suspender el servicio.</p>
-            <h3>5.3. Cancelación y Reembolsos</h3>
-            <p>Puede cancelar su cuenta en cualquier momento. Los pagos realizados no son reembolsables, salvo indicación contraria.</p>
+        <h2>5. PLANES DE SERVICIO Y PAGOS</h2>
+        <h3>5.1. Tarifas y Planes</h3>
+        <p>Las tarifas, características y condiciones de cada plan de servicio de Cloudi se encuentran detalladas y actualizadas en la sección <a href="index.html#precios">Planes de Servicio</a> de nuestro sitio web. Todos los precios se expresan en Pesos Argentinos (ARS) y, salvo indicación expresa en contrario, no incluyen impuestos que pudieran aplicarse según la legislación vigente (ej. IVA).</p>
+        <p>Cloudi se reserva el derecho de modificar las tarifas de sus planes de servicio en cualquier momento. Cualquier cambio en las tarifas aplicables a los servicios ya contratados será comunicado al Usuario con al menos treinta (30) días de antelación a su entrada en vigor, dándole la opción de aceptar las nuevas tarifas o cancelar su servicio antes de la renovación.</p>
+        <h3>5.2. Facturación y Pago</h3>
+        <p>El pago de los Servicios se realizará por adelantado, según el ciclo de facturación seleccionado por el Usuario (mensual, anual, etc.). El Usuario autoriza a Cloudi a cargar el importe correspondiente a través del método de pago provisto. En caso de impago o si el pago no puede ser procesado, Cloudi se reserva el derecho de suspender temporalmente el Servicio hasta la regularización de la situación. La falta de pago continuada podrá resultar en la cancelación definitiva del Servicio y la eliminación de los datos alojados.</p>
+        <h3>5.3. Cancelación y Reembolsos</h3>
+        <p>El Usuario puede cancelar su cuenta en cualquier momento a través del panel de control de su cuenta o contactando a soporte técnico. Cloudi no ofrece reembolsos de los pagos ya realizados por servicios prestados, salvo en los casos específicos que pudieran establecerse en una política de garantía de satisfacción (si aplicable) o según lo exija la ley de protección al consumidor. El Usuario es responsable de realizar copias de seguridad de su contenido antes de la cancelación, ya que los datos pueden ser eliminados permanentemente tras la terminación del servicio.</p>
 
-            <h2>6. SUBDOMINIOS PERSONALIZADOS</h2>
-            <p>Los usuarios pueden crear subdominios bajo nuestro dominio principal. Nos reservamos el derecho de desactivar subdominios que violen estos Términos o que sean inapropiados.</p>
+        <h2>6. SUBDOMINIOS PERSONALIZADOS</h2>
+        <p>Cloudi permite a los Usuarios crear y utilizar subdominios bajo nuestro dominio principal (ej: <code>suproyecto.cloudi.com.ar</code>) como parte de los Servicios contratados. El uso de estos subdominios debe cumplir con todas las políticas de Uso Aceptable establecidas en la Sección 4. Cloudi se reserva el derecho absoluto de desactivar, suspender o eliminar cualquier subdominio que, a nuestra sola discreción, consideremos que viola estos Términos, es inapropiado, ilegal o perjudicial para Cloudi o para terceros, sin previo aviso y sin derecho a reembolso.</p>
 
-            <h2>7. LIMITACIÓN DE RESPONSABILIDAD</h2>
-            <p>Cloud¡ no será responsable por daños indirectos o pérdidas de beneficios causados por el uso o la imposibilidad de uso del Servicio.</p>
+        <h2>7. LIMITACIÓN DE RESPONSABILIDAD Y EXENCIÓN DE GARANTÍAS</h2>
+        <p>EL SERVICIO DE CLOUDI SE PROPORCIONA "TAL CUAL" Y "SEGÚN DISPONIBILIDAD", SIN GARANTÍAS DE NINGÚN TIPO, YA SEAN EXPRESAS O IMPLÍCITAS. CLOUDI NO GARANTIZA QUE EL SERVICIO SERÁ ININTERRUMPIDO, SEGURO O LIBRE DE ERRORES; TAMPOCO GARANTIZA LA PRECISIÓN O INTEGRIDAD DEL CONTENIDO ALOJADO POR LOS USUARIOS.</p>
+        <p>EN LA MEDIDA MÁXIMA PERMITIDA POR LA LEY APLICABLE, CLOUDI S.R.L., SUS DIRECTORES, EMPLEADOS, AGENTES, AFILIADOS Y LICENCIANTES NO SERÁN RESPONSABLES POR NINGÚN DAÑO INDIRECTO, INCIDENTAL, ESPECIAL, CONSECUENCIAL O EJEMPLAR, INCLUYENDO, ENTRE OTROS, DAÑOS POR PÉRDIDA DE BENEFICIOS, PÉRDIDA DE DATOS, INTERRUPCIÓN DEL NEGOCIO O DAÑOS A LA REPUTACIÓN, QUE SURJAN DEL USO O LA IMPOSIBILIDAD DE USAR EL SERVICIO, INCLUSO SI CLOUDI HA SIDO ADVERTIDA DE LA POSIBILIDAD DE TALES DAÑOS.</p>
+        <p>LA RESPONSABILIDAD TOTAL DE CLOUDI POR CUALQUIER RECLAMACIÓN BAJO ESTOS TÉRMINOS ESTARÁ LIMITADA AL MONTO PAGADO POR EL USUARIO A CLOUDI POR LOS SERVICIOS DURANTE LOS TRES (3) MESES PREVIOS A LA OCURRENCIA DEL EVENTO QUE DIO LUGAR A LA RECLAMACIÓN.</p>
+        <p>EL USUARIO RECONOCE Y ACEPTA QUE ES EL ÚNICO RESPONSABLE DEL CONTENIDO QUE ALOJA O TRANSMITE A TRAVÉS DEL SERVICIO, Y QUE CLOUDI ACTÚA SIMPLEMENTE COMO UN PROVEEDOR DE SERVICIOS DE ALOJAMIENTO. CLOUDI NO ASUME RESPONSABILIDAD POR LA LEGALIDAD, AUTENTICIDAD, EXACTITUD O VERACIDAD DEL CONTENIDO DEL USUARIO.</p>
 
-            <h2>8. MODIFICACIÓN Y TERMINACIÓN DEL SERVICIO</h2>
-            <p>Podemos modificar o suspender el Servicio en cualquier momento. También podemos cancelar cuentas por incumplimientos.</p>
+        <h2>8. MODIFICACIÓN, SUSPENSIÓN Y TERMINACIÓN DEL SERVICIO</h2>
+        <p>Cloudi se reserva el derecho de modificar, suspender o interrumpir el Servicio (o cualquier parte de este) en cualquier momento, con o sin previo aviso, por razones técnicas, operativas, de seguridad o legales. Cloudi no será responsable ante el Usuario ni ante terceros por ninguna modificación, suspensión o interrupción del Servicio.</p>
+        <p>Cloudi también se reserva el derecho de suspender o terminar la cuenta de un Usuario y el acceso a los Servicios, con efecto inmediato, si el Usuario incumple cualquiera de los Términos aquí establecidos, incluyendo, pero no limitado a, la violación de la política de Uso Aceptable o el impago de tarifas. En caso de terminación por incumplimiento, no habrá derecho a reembolso de las tarifas pagadas.</p>
 
-            <h2>9. LEY APLICABLE Y JURISDICCIÓN</h2>
-            <p>Estos Términos se rigen por las leyes de Argentina. Cualquier disputa será resuelta en los tribunales de Ciudad Carhué.</p>
+        <h2>9. LEY APLICABLE Y JURISDICCIÓN</h2>
+        <p>Estos Términos se rigen e interpretan de acuerdo con las leyes de la República Argentina, sin dar efecto a ningún principio de conflicto de leyes. Cualquier disputa, controversia o reclamo que surja de o en relación con estos Términos o el Servicio será resuelta por los tribunales ordinarios con asiento en la ciudad de Carhué, Provincia de Buenos Aires, República Argentina, renunciando expresamente el Usuario a cualquier otra jurisdicción que pudiera corresponderle.</p>
+        
+        <h2>10. INDEMNIZACIÓN</h2>
+        <p>El Usuario acepta indemnizar, defender y mantener indemne a Cloudi S.R.L., sus afiliados, directores, empleados, agentes y licenciantes, de y contra todas y cada una de las reclamaciones, responsabilidades, daños, pérdidas, costos y gastos (incluidos los honorarios razonables de abogados) que surjan de o estén relacionados con:</p>
+        <ul class="list-disc pl-6">
+            <li>Su acceso o uso del Servicio.</li>
+            <li>Cualquier contenido que aloje, publique, transmita o haga disponible a través del Servicio.</li>
+            <li>Su incumplimiento de estos Términos.</li>
+            <li>Su violación de cualquier ley o los derechos de un tercero.</li>
+        </ul>
 
-            <p class="mt-8 text-sm">Fecha de última actualización: <span id="ultimaActualizacion"></span></p>
+        <h2>11. COPIAS DE SEGURIDAD (BACKUPS)</h2>
+        <p>El Usuario es el único y exclusivo responsable de realizar y mantener copias de seguridad (backups) de todo el contenido, datos, bases de datos y archivos que aloje en los servidores de Cloudi. Aunque Cloudi puede realizar copias de seguridad de sus sistemas con fines de recuperación ante desastres y operacionales, no garantiza la disponibilidad ni la integridad de las copias de seguridad de los datos del Usuario y no será responsable por ninguna pérdida de datos. Se recomienda encarecidamente que el Usuario implemente su propia estrategia de copias de seguridad.</p>
 
-            <p class="mt-4 text-xs italic text-gray-400 text-center">
-                Cloud¡ es una marca operada por Aaron - Todos los derechos reservados.
-            </p>
-        </div>
+        <h2>12. SOPORTE TÉCNICO</h2>
+        <p>Cloudi proporcionará soporte técnico relacionado con la operación de la infraestructura de alojamiento y las características del Servicio contratado, según lo especificado en nuestros planes de servicio. El soporte técnico no incluye la resolución de problemas relacionados con el contenido, código o aplicaciones específicas del Usuario, ni la configuración de software de terceros no provisto por Cloudi. El horario y los medios de contacto para el soporte técnico se encuentran disponibles en la sección de Contacto de nuestro sitio web.</p>
+
+        <h2>13. FUERZA MAYOR</h2>
+        <p>Cloudi no será responsable por ningún retraso o incumplimiento en la ejecución de sus obligaciones bajo estos Términos si dicho retraso o incumplimiento se debe a causas fuera de su control razonable, incluyendo, pero no limitado a, actos de Dios, guerras, terrorismo, disturbios civiles, embargos, incendios, inundaciones, terremotos, huelgas, pandemias, escasez de mano de obra o materiales, interrupciones de servicios de internet o telecomunicaciones, o fallas de terceros proveedores.</p>
+
+        <h2>14. ACUERDO COMPLETO</h2>
+        <p>Estos Términos y cualquier política o pauta publicada por Cloudi en el Servicio constituyen el acuerdo completo entre usted y Cloudi con respecto al uso del Servicio. Este acuerdo reemplaza cualquier comunicación o propuesta anterior o contemporánea, ya sea electrónica, oral o escrita, entre usted y Cloudi.</p>
+
+        <p class="mt-8 text-sm">Fecha de última actualización: <span id="ultimaActualizacion">23 de julio de 2025</span></p>
     </div>
+</div>
 </main>
     
     <footer class="bg-slate-900 border-t border-slate-700 py-8">
@@ -154,9 +181,9 @@
                 
                 <div class="flex space-x-4 md:space-x-6">
                     
-                    <a href="aviso-legal.html" class="hover:text-sky-400 transition-colors">Aviso Legal</a>
-                    <a href="terminos-condiciones.html" class="hover:text-sky-400 transition-colors">Términos y Condiciones</a>
-                    <a href="politica-privacidad.html" class="hover:text-sky-400 transition-colors">Política de Privacidad</a>
+                    <a href="aviso-legal" class="hover:text-sky-400 transition-colors">Aviso Legal</a>
+                    <a href="terminos-condiciones" class="hover:text-sky-400 transition-colors">Términos y Condiciones</a>
+                    <a href="politica-privacidad"  class="hover:text-sky-400 transition-colors">Política de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -168,7 +195,7 @@
     document.getElementById('anioActual').textContent = new Date().getFullYear();
 
     
-    const fechaDeMiUltimaActualizacion = '2025-06-16'; 
+    const fechaDeMiUltimaActualizacion = '2025-07-23'; 
 
     
     const fechaFormateada = new Date(fechaDeMiUltimaActualizacion + 'T00:00:00') 

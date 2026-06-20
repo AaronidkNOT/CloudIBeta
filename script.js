@@ -1,3 +1,13 @@
+/* =========================================================================
+    script.js — Comportamiento global del sitio (compartido por todas las
+    páginas que lo importan: index, clientes, quienes-somos, etc.)
+
+    Nota: el <script> se carga con el atributo "defer", por eso el código
+    que queda fuera del bloque DOMContentLoaded (a partir de la línea ~40)
+    también funciona sin problema: el DOM ya está listo para cuando se ejecuta.
+   ========================================================================= */
+
+// ----- Menú hamburguesa (mobile) -----
 document.addEventListener('DOMContentLoaded', function () {
 
     const botonMenuMovil = document.getElementById('boton-menu-movil');
@@ -7,16 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const enlacesNavegacionMovil = menuMovil.querySelectorAll('a');
 
         botonMenuMovil.addEventListener('click', function () {
-            // ANTES: menuMovil.classList.toggle('hidden');
-            menuMovil.classList.toggle('menu-movil-abierto'); // <--- CAMBIO AQUÍ
+            menuMovil.classList.toggle('menu-movil-abierto');
 
             const estaExpandido = botonMenuMovil.getAttribute('aria-expanded') === 'true' || false;
             botonMenuMovil.setAttribute('aria-expanded', !estaExpandido);
 
-            // La condición para el ícono ahora se basa en la nueva clase
-            const rutaIcono = menuMovil.classList.contains('menu-movil-abierto') // <--- CAMBIO AQUÍ
-                ? "M6 18L18 6M6 6l12 12" // Ícono X (abierto)
-                : "M4 6h16M4 12h16m-7 6h7"; // Ícono Hamburguesa (cerrado)
+            const rutaIcono = menuMovil.classList.contains('menu-movil-abierto')
+                ? "M6 18L18 6M6 6l12 12"
+                : "M4 6h16M4 12h16m-7 6h7";
             const iconoSVG = botonMenuMovil.querySelector('svg path');
             if (iconoSVG) {
                 iconoSVG.setAttribute('d', rutaIcono);
@@ -25,12 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         enlacesNavegacionMovil.forEach(enlace => {
             enlace.addEventListener('click', () => {
-                // ANTES: menuMovil.classList.add('hidden');
-                menuMovil.classList.remove('menu-movil-abierto'); // <--- CAMBIO AQUÍ
+                menuMovil.classList.remove('menu-movil-abierto');
                 
                 const iconoSVG = botonMenuMovil.querySelector('svg path');
                 if (iconoSVG) {
-                    iconoSVG.setAttribute('d', "M4 6h16M4 12h16m-7 6h7"); // Reset a hamburguesa
+                    iconoSVG.setAttribute('d', "M4 6h16M4 12h16m-7 6h7");
                 }
                 botonMenuMovil.setAttribute('aria-expanded', 'false');
             });
@@ -38,11 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// ----- Año actual en el footer (© 2026 Cloud¡) -----
     const spanAnioActual = document.getElementById('anioActual');
     if (spanAnioActual) {
         spanAnioActual.textContent = new Date().getFullYear();
     }
 
+// ----- Fecha de "última actualización" en páginas legales -----
     const spanUltimaActualizacion = document.getElementById('ultimaActualizacion');
     if (spanUltimaActualizacion) {
         spanUltimaActualizacion.textContent = new Date().toLocaleDateString('es-ES', {
@@ -52,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+// ----- Animación de aparición al hacer scroll (.elemento-animado) -----
     const elementosAnimados = document.querySelectorAll('.elemento-animado');
 
     if (elementosAnimados.length > 0) {
@@ -59,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             entradas.forEach(entrada => {
                 if (entrada.isIntersecting) {
                     entrada.target.classList.add('es-visible');
-                    observador.unobserve(entrada.target);
+                    observador.unobserve(entrada.target); // se anima una sola vez
                 }
             });
         }, { threshold: 0.1 });
@@ -69,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+// ----- Header: agrega una clase extra cuando el usuario scrollea -----
     const encabezado = document.getElementById('encabezado');
     if (encabezado) {
         let ultimaPosicionScroll = 0;
@@ -85,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, false);
     }
 
+// ----- Selector de tema claro/oscuro (persistido en localStorage) -----
     const botonesInterruptorTema = document.querySelectorAll('.boton-interruptor-tema');
 
     const iconoSol = `<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 7.071a1 1 0 001.414 1.414l.707-.707a1 1 0 00-1.414-1.414l-.707.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>`;

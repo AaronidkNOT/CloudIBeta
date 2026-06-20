@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
+    <link rel="apple-touch-icon" href="imagenes/favicon.png">
     <meta name="description" content="¿Tenés dudas o estás listo para empezar? Contactanos para consultas sobre nuestros planes de páginas web a bajo costo, subdominios y hosting. Estamos para ayudarte.">
     <meta http-equiv="Content-Security-Policy"
     content="default-src 'self';
-    script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+    script-src 'self' https://cdn.jsdelivr.net https://static.cloudflareinsights.com 'unsafe-inline';
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com;
     img-src 'self' data: https://upload.wikimedia.org https://images.icon-icons.com;
     connect-src 'self' https://formsubmit.co;">
-    <title>Contacto - Cloud¡</title>
+    <title>Contacto Cloudi | Email, WhatsApp y Soporte para tu Web</title>
     <link href="dist/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://aaronidknot.github.io/CloudI/checkout.html" />
+    <link rel="canonical" href="https://cloudi.com.ar/checkout" />
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
 </head>
 <body class="flex flex-col min-h-screen">
@@ -24,9 +26,9 @@
     <header id="encabezado" class="barra-navegacion-fija transition-all duration-300">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold text-sky-400 logo-con-tema">Cloud¡</a>
+                <a href="/" class="logo-con-tema">Cloud¡</a>
                 <div class="flex items-center space-x-4">
-                    <a href="index.html#precios" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Ver Planes</a>
+                    <a href="/#precios" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Ver Planes</a>
                 </div>
             </div>
         </nav>
@@ -38,7 +40,7 @@
 
             <h1 id="titulo-checkout" class="text-3xl md:text-4xl font-bold text-white mb-8 text-center texto-primario-con-tema">Contacta con Nosotros por Gmail</h1>
 
-            <form id="formulario-checkout" action="https://formsubmit.co/cloudi.dmarg@gmail.com" method="POST" class="space-y-6">
+            <form id="formulario-checkout" action="https://formsubmit.co/contacto@cloudi.com.ar" method="POST" class="space-y-6">
 
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="_honey" style="display:none"> <!-- Anti-spam -->
@@ -57,7 +59,7 @@
         <div id="contador-caracteres-mensaje" class="text-xs text-slate-400 mt-1">0/1000 caracteres</div>
     </div>
     <div id="mensaje-confirmacion-inline" class="hidden mt-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-slate-700 dark:text-green-400 border border-green-500" role="alert">
-        <!-- El mensaje se insertará aquí -->
+        <!-- El mensaje se inserta aca -->
     </div>
     <button type="submit" id="boton-enviar-formulario" class="w-full text-white bg-sky-500 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-3 text-center transition-colors">
         Enviar Consulta
@@ -72,8 +74,8 @@
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center texto-primario-con-tema">Contacta con Nosotros por WhatsApp</h1>
 
             <div class="text-center">
-                <a href="https://wa.me/5492923541222?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="inline-block">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/100px-WhatsApp.svg.png" alt="Contactar por WhatsApp" style="width:60px; height:auto; vertical-align: middle;">
+                <a href="https://wa.me/5492936408139?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="inline-block">
+                    <img src="imagenes/WhatsApp.svg.webp" alt="Contactar por WhatsApp" style="width:60px; height:auto; vertical-align: middle;">
                 </a>
                 </div>
         </div>
@@ -85,9 +87,9 @@
             <div class="contenido-pie-pagina texto-pie-pagina-con-tema">
                 <p class="mb-4 md:mb-0">© <span id="anioActual"></span> Cloud!. Todos los derechos reservados.</p>
                 <div class="enlaces-pie-pagina">
-                    <a href="aviso-legal.html" class="enlace-texto-pie-pagina-con-tema">Aviso Legal</a>
-                    <a href="terminos-condiciones.html" class="enlace-texto-pie-pagina-con-tema">Términos y Condiciones</a>
-                    <a href="politica-privacidad.html" class="enlace-texto-pie-pagina-con-tema">Política de Privacidad</a>
+                    <a href="aviso-legal" class="enlace-texto-pie-pagina-con-tema">Aviso Legal</a>
+                    <a href="terminos-condiciones" class="enlace-texto-pie-pagina-con-tema">Términos y Condiciones</a>
+                    <a href="politica-privacidad" class="enlace-texto-pie-pagina-con-tema">Política de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -105,7 +107,7 @@
         const contadorCaracteresMensajeEl = document.getElementById('contador-caracteres-mensaje');
         const MAX_CARACTERES_MENSAJE = 1000;
 
-        // *** Obtener referencia al div del mensaje inline ***
+        // Obtener referencia al div del mensaje inline
         const elMensajeConfirmacionInline = document.getElementById('mensaje-confirmacion-inline');
 
         function actualizarVisibilidadContador() {
@@ -145,7 +147,7 @@
         if(elDetallesPlan) elDetallesPlan.classList.add('hidden');
         if(elSeccionContacto) elSeccionContacto.classList.remove('hidden');
         if(elBotonEnviarFormulario) elBotonEnviarFormulario.textContent = 'Enviar Consulta';
-
+        
         if (campoMensaje) {
             campoMensaje.required = true;
         }
@@ -153,42 +155,31 @@
 
 
         // Lógica de validación y envío del formulario
-        // --- Reemplaza tu bloque de código 'elFormulario.addEventListener' por este ---
 
 if (elFormulario && !elFormulario.classList.contains('hidden')) {
     elFormulario.addEventListener('submit', (e) => {
-        // 1. Prevenimos el comportamiento por defecto del formulario (que es recargar la página)
         e.preventDefault();
-
-        // 2. Creamos un objeto FormData para capturar todos los datos del formulario
         const formData = new FormData(elFormulario);
         const elBotonEnviarFormulario = document.getElementById('boton-enviar-formulario');
         const elMensajeConfirmacionInline = document.getElementById('mensaje-confirmacion-inline');
 
-        // 3. Mostramos un estado de "cargando" para que el usuario sepa que algo está pasando
         elBotonEnviarFormulario.disabled = true;
         elBotonEnviarFormulario.textContent = 'Enviando...';
-        elMensajeConfirmacionInline.classList.add('hidden'); // Ocultar mensajes anteriores
-
-        // 4. Usamos fetch para enviar los datos a FormSubmit de forma asíncrona
+        elMensajeConfirmacionInline.classList.add('hidden');
         fetch(elFormulario.action, {
             method: 'POST',
             body: formData,
             headers: {
-                'Accept': 'application/json' // Importante para que FormSubmit devuelva una respuesta JSON
+                'Accept': 'application/json'
             },
         })
         .then(response => {
-            // 5. Analizamos la respuesta del servidor
             if (response.ok) {
-                // Si el envío fue exitoso (status 200-299)
                 elMensajeConfirmacionInline.innerHTML = '<span class="font-medium">¡Gracias por tu consulta!</span> Nos pondremos en contacto contigo pronto.';
                 elMensajeConfirmacionInline.className = 'mt-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-slate-700 dark:text-green-400 border border-green-500'; // Clases de éxito
-                elFormulario.reset(); // Limpiamos el formulario
-                resetearContadorMensaje(); // Reseteamos el contador de caracteres
+                elFormulario.reset();
+                resetearContadorMensaje();
             } else {
-                // Si hubo un error en el servidor (ej: FormSubmit está caído)
-                // Usamos response.json() para intentar obtener el mensaje de error de FormSubmit
                 return response.json().then(data => {
                     throw new Error(data.message || 'Error en el servidor.');
                 })

@@ -1,3 +1,14 @@
+/* =========================================================================
+    style.css — Hoja de estilos "a medida" de Cloud¡
+    Convive con dist/styles.css (Tailwind compilado): acá viven las clases
+    semánticas en español (".boton-primario", ".tarjeta-precios", etc.) que
+    se reutilizan en TODAS las páginas del sitio para que index, clientes,
+    quienes-somos, contacto y las páginas legales compartan exactamente
+    la misma paleta de colores y tipografía.
+    ========================================================================= */
+
+    /* Capa del fondo animado de partículas (particles.js). Va detrás de todo
+    el contenido gracias al z-index negativo. */
 #particles-js {
     position: fixed;
     width: 100vw;
@@ -7,21 +18,24 @@
     z-index: -1;
 }
 
+    /* Paleta de colores global del sitio.
+    Si necesitás cambiar el color de marca, modificá estas variables y
+    se actualiza automáticamente en todas las páginas. */
 :root {
-    --fondo-primario: #0f172a;
-    --fondo-secundario: #1e293b;
-    --fondo-acento: #334155;
-    --fondo-papel: #1e293b;
-    --texto-primario: #e2e8f0;
-    --texto-secundario: #94a3b8;
-    --texto-enlace: #38bdf8;
+    --fondo-primario: #0f172a;   /* fondo general (slate-900) */
+    --fondo-secundario: #1e293b; /* fondo de menú móvil */
+    --fondo-acento: #334155;     /* hover de tarjetas / botones secundarios */
+    --fondo-papel: #1e293b;      /* fondo de tarjetas */
+    --texto-primario: #e2e8f0;   /* texto principal */
+    --texto-secundario: #94a3b8; /* texto descriptivo / subtítulos */
+    --texto-enlace: #38bdf8;     /* color de marca: logo, links y títulos de sección */
     --borde: #334155;
 
-    --cielo-500: #0ea5e9;
-    --cielo-600: #0284c7;
+    --cielo-500: #0ea5e9; /* color primario de botones (sky-500) */
+    --cielo-600: #0284c7; /* hover de botones primarios (sky-600) */
     --cielo-100: #e0f2fe;
-    --rosa-500: #ec4899;
-    --verde-400: #4ade80;
+    --rosa-500: #ec4899;  /* distintivo "Más Popular" en planes */
+    --verde-400: #4ade80; /* check ✓ de las listas de planes */
     --verde-300: #86efac;
 }
 
@@ -34,6 +48,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Animacion de aparicion al hacer scroll (usada con IntersectionObserver en script.js) */
 .elemento-animado {
     opacity: 0;
     transform: translateY(20px);
@@ -48,6 +63,7 @@ body {
 .retraso-300ms { transition-delay: 0.3s !important; }
 .retraso-400ms { transition-delay: 0.4s !important; }
 
+/* Header sticky con efecto 'vidrio esmerilado' (blur). Compartido por index, clientes y quienes-somos */
 .barra-navegacion-fija {
     position: sticky;
     top: 0;
@@ -62,6 +78,7 @@ body {
                 filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 
+/* Menu hamburguesa para mobile: colapsado por defecto, se expande con la clase .menu-movil-abierto */
 #menu-movil {
     background-color: var(--fondo-secundario); 
     border-radius: 0.375rem;
@@ -76,6 +93,7 @@ body {
     opacity: 1;
     max-height: 50vh; 
 }
+/* Logo 'Cloud!': esta es LA clase que define tamano y color del logo en todo el sitio. No usar estilos sueltos aca. */
 .logo-con-tema {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -101,6 +119,7 @@ body {
 }
 .enlace-navegacion-movil-con-tema:hover { background-color: var(--fondo-acento); }
 
+/* ===== Botones ===== */
 .boton {
     font-weight: 600;
     border-radius: 0.5rem;
@@ -119,6 +138,7 @@ body {
     padding: 0.5rem 1rem;
 }
 
+/* ===== Seccion Hero (portada) ===== */
 .fondo-seccion-principal {
     background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)),
 }
@@ -171,6 +191,7 @@ body {
     transform: scale(1.05);
 }
 
+/* Padding vertical estandar para todas las secciones de contenido */
 .seccion-con-relleno {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -206,6 +227,7 @@ body {
     margin-right: auto;
 }
 
+/* ===== Tarjetas de caracteristicas / casos de exito ===== */
 .tarjeta-caracteristica {
     background-color: var(--fondo-papel);
     padding: 2rem;
@@ -252,6 +274,7 @@ body {
     text-align: center;
 }
 
+/* Resalta fragmentos de codigo o tecnologias (ej: HTML5, CSS3, JS) dentro del texto */
 .codigo-resaltado {
     background-color: var(--fondo-acento);
     padding-left: 0.25rem;
@@ -260,6 +283,7 @@ body {
     color: var(--texto-enlace);
 }
 
+/* ===== Tarjetas de Planes y Precios ===== */
 .tarjeta-precios {
     background-color: var(--fondo-papel);
     padding: 2rem;
@@ -370,6 +394,7 @@ body {
     text-align: center;
 }
 
+/* ===== Footer ===== */
 .fondo-pie-pagina-con-tema {
     background-color: rgba(15, 23, 42, 0.8);
     border-top: 1px solid var(--borde);
@@ -397,6 +422,7 @@ body {
 .enlace-texto-pie-pagina-con-tema:hover { color: var(--texto-enlace) !important; }
 
 
+/* ===== Paginas legales (aviso legal, terminos, privacidad) ===== */
 .seccion-contenido {
     background-color: var(--fondo-papel);
     transition: background-color 0.3s ease;
@@ -411,6 +437,7 @@ body {
 .seccion-contenido a { color: var(--texto-enlace); }
 .seccion-contenido a:hover { filter: brightness(1.2); }z
 
+/* Acordeon 'Mas informacion' de la seccion Caracteristicas (sin JS, solo CSS) */
 input[type="checkbox"]{
 display: none;
 }
@@ -425,5 +452,99 @@ opacity 1.5s ease
 }
 input[type="checkbox"]:checked ~ .Contenido {
 max-height: 1600px;
+    opacity: 1;
+}
+
+    /* =========================================================================
+    Galería de Clientes (cliente.html)
+    Grilla de tarjetas con foto, usada en la sección de Casos de Éxito.
+    Reutiliza las mismas variables de color que el resto del sitio
+    (--fondo-papel, --borde, --texto-enlace, --cielo-500) para que se vea
+    100% integrada con index.html.
+    ========================================================================= */
+
+.grilla-clientes {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+    .grilla-clientes { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Tarjeta base (foto + info) */
+.tarjeta-cliente {
+    background-color: var(--fondo-papel);
+    border: 1px solid var(--borde);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, border-color 0.4s ease-in-out;
+}
+.tarjeta-cliente:hover {
+    transform: translateY(-5px);
+    border-color: var(--cielo-500);
+}
+
+.imagen-tarjeta-cliente {
+    position: relative;
+    width: 100%;
+    height: 12rem;
+    overflow: hidden;
+    background-color: var(--fondo-acento);
+}
+.imagen-tarjeta-cliente img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.tarjeta-cliente:hover .imagen-tarjeta-cliente img {
+    transform: scale(1.08);
+}
+
+.cuerpo-tarjeta-cliente {
+    padding: 1.5rem;
+}
+.rubro-tarjeta-cliente {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--texto-enlace);
+    background-color: rgba(56, 189, 248, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    margin-bottom: 0.5rem;
+}
+.nombre-tarjeta-cliente {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--texto-primario);
+    margin-bottom: 0.5rem;
+}
+.descripcion-tarjeta-cliente {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+    /* Tarjeta "slot abierto" — mismo formato que la real, pero invita a sumarse
+    en vez de mostrar una foto (para no inventar clientes que no existen). */
+.tarjeta-cliente-vacia .imagen-tarjeta-cliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: repeating-linear-gradient(45deg, var(--fondo-acento), var(--fondo-acento) 10px, var(--fondo-papel) 10px, var(--fondo-papel) 20px);
+    border-bottom: 1px dashed var(--borde);
+}
+.icono-tarjeta-cliente-vacia {
+    width: 3rem;
+    height: 3rem;
+    color: var(--texto-enlace);
+    opacity: 0.6;
+}
+.tarjeta-cliente-vacia:hover {
+    border-color: var(--texto-enlace);
+}
+.tarjeta-cliente-vacia:hover .icono-tarjeta-cliente-vacia {
     opacity: 1;
 }
