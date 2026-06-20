@@ -108,7 +108,7 @@ Esto permite que **cualquier página nueva** (como `cliente.html`) reutilice exa
 
 ## 📌 Estado del proyecto
 
-Proyecto desarrollado originalmente en 2024 y reorganizado/documentado para portfolio. Algunas secciones (como el mapa turístico) están marcadas como "Próximamente" y siguen en desarrollo activo.
+Proyecto desarrollado originalmente en 2024 y reorganizado/documentado para portfolio.
 
 ---
 
