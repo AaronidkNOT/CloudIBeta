@@ -31,7 +31,7 @@ npx serve .
 
 ---
 
-## ✨ Características principales
+## Características principales
 
 - **Diseño responsive**, mobile-first, con menú hamburguesa animado.
 - **Modo oscuro por defecto**, con interruptor de tema (persistido en `localStorage`).
@@ -46,7 +46,7 @@ npx serve .
 
 ---
 
-## 🛠️ Tecnologías usadas
+## Tecnologías usadas
 
 | Tecnología | Uso |
 |---|---|
@@ -63,7 +63,7 @@ No usa frameworks (React, Vue, etc.) ni bundlers (Webpack, Vite) a propósito: e
 
 ---
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 Proyecto Cloud/
@@ -89,7 +89,7 @@ Proyecto Cloud/
 
 ---
 
-## 🎨 Sistema de diseño
+## Sistema de diseño
 
 Todos los colores, tipografías y componentes reutilizables (botones, tarjetas, header, footer) viven como **variables CSS y clases semánticas en español** dentro de `style.css`:
 
@@ -106,18 +106,18 @@ Esto permite que **cualquier página nueva** (como `cliente.html`) reutilice exa
 
 ---
 
-## 📌 Estado del proyecto
+## Estado del proyecto
 
 Proyecto desarrollado originalmente en 2024 y reorganizado/documentado para portfolio.
 
 ---
 
-## 👤 Autor
+## Autor
 
 Desarrollado por **Aaron Dominguez**.
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de uso libre, Cualquier duda que tengas contactame.
